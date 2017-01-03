@@ -44,8 +44,21 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void addTeam(ActionEvent event) 
     {
-        listTeams.add(textFieldAddTeam.getText());
-        textFieldAddTeam.clear();
+        if (!textFieldAddTeam.getText().isEmpty())
+        {
+            listTeams.add(textFieldAddTeam.getText());
+            textFieldAddTeam.clear();
+        }
+    }
+    
+        @FXML
+    private void deleteTeam(ActionEvent event) 
+    {
+        final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
+        if (selectedItem != -1)
+        {
+            listTeamView.getItems().remove(selectedItem);
+        }
     }
     
     @FXML
@@ -55,6 +68,8 @@ public class FXMLDocumentController implements Initializable {
         {   
             System.out.println(listTeams.get(i));
         }
+            final int selectedIdx = listTeamView.getSelectionModel().getSelectedIndex();
+            listTeamView.getItems().remove(selectedIdx);
     }
     
     @FXML

@@ -5,12 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.FXMLDocumentController">
     <children>
-        <Button layoutX="278.0" layoutY="36.0" onAction="#addTeam" text="Add Team" />
+        <Button layoutX="244.0" layoutY="36.0" onAction="#addTeam" text="Add Team" />
       <TextField fx:id="textFieldAddTeam" layoutX="39.0" layoutY="36.0" />
       <Button layoutX="61.0" layoutY="209.0" mnemonicParsing="false" onAction="#testButton2" text="TestButton2" />
       <Button layoutX="266.0" layoutY="82.0" mnemonicParsing="false" onAction="#shuffleButton" text="Shuffle Teams" />
       <ListView fx:id="listTeamView" layoutX="244.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="344.0" layoutY="36.0" mnemonicParsing="false" onAction="#deleteTeam" text="Delete Team" />
     </children>
 </AnchorPane>
