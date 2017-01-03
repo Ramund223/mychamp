@@ -9,54 +9,63 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
  *
  * @author Emil
  */
+
 public class FXMLDocumentController implements Initializable {
     
-    ArrayList<String> teams = new ArrayList<String>();
+    ObservableList<String> listTeams;
     
     @FXML
-    private Label label;
+    private TextField textFieldAddTeam;
     
     @FXML
-    private TextField addTeam;
+    private ListView listTeamView;
     
-    
-    @FXML
-    private void addTeam(ActionEvent event) {
-
-        teams.add(addTeam.getText());
-        addTeam.clear();
-        
+    public FXMLDocumentController()
+    {
+        listTeams = FXCollections.observableArrayList();
     }
     
     @FXML
-    private void testButton2(ActionEvent event) {
-
-        for(int i = 0; i < teams.size(); i++) {   
-        System.out.print(teams.get(i));
-}
-
+    private void addTeam(ActionEvent event) 
+    {
+        listTeams.add(textFieldAddTeam.getText());
+        textFieldAddTeam.clear();
     }
     
     @FXML
-    private void shuffleButton(ActionEvent event) {
-
-        Collections.shuffle(teams);
-
+    private void testButton2(ActionEvent event) 
+    {
+        for(int i = 0; i < listTeams.size(); i++) 
+        {   
+            System.out.println(listTeams.get(i));
+        }
+    }
+    
+    @FXML
+    private void shuffleButton(ActionEvent event) 
+    {
+        Collections.shuffle(listTeams);
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        listTeamView.setItems(listTeams);
     }    
-    
 }
