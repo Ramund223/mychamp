@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="637.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.MatchScheduleController">
+<AnchorPane id="AnchorPane" prefHeight="637.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.MatchScheduleController">
    <children>
       <TableView layoutX="14.0" layoutY="14.0" prefHeight="567.0" prefWidth="200.0">
         <columns>
