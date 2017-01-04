@@ -17,5 +17,6 @@
       <Button layoutX="403.0" layoutY="452.0" mnemonicParsing="false" onAction="#resetTour" text="Reset" />
       <Button layoutX="55.0" layoutY="255.0" mnemonicParsing="false" onAction="#addDummy" text="Dummy Team" />
       <Button layoutX="345.0" layoutY="36.0" mnemonicParsing="false" onAction="#editTeam" text="Edit Team" />
+      <Button fx:id="groupStageButton" layoutX="68.0" layoutY="139.0" mnemonicParsing="false" onAction="#groupStage" text="Group Stage" />
     </children>
 </AnchorPane>

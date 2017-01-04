@@ -7,6 +7,7 @@ package mycham.GUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,24 +19,50 @@ import javafx.stage.Stage;
  *
  * @author Nicolai
  */
-public class MatchScheduleController implements Initializable {
+public class MatchScheduleController extends FXMLDocumentController implements Initializable {
     
     @FXML
     private Button matchScheduleClose;
 
+   private FXMLDocumentController mainClass;
+
+   ObservableList<String> listTeams;
+   
+   public MatchScheduleController() 
+   {
+        mainClass = new FXMLDocumentController();
+        listTeams = mainClass.getList();
+   }
+    
+    @FXML
+    private void matchScheduleClose(ActionEvent event) 
+    {
+        Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
+        stage.close();
+        
+    }
+    
+    @FXML
+    private void testButton(ActionEvent event) 
+    {
+        for(int i = 0; i < listTeams.size(); i++) 
+        {   
+            System.out.println(listTeams.get(i));
+        }
+        System.out.println("LOL");
+        
+        if (listTeams.isEmpty()) 
+        {
+            System.out.println("EMPTY");
+        }
+        System.out.println(mainClass.getList().toString());
+    }
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
-
-    @FXML
-    private void songCancel(ActionEvent event) 
-    {
-        Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
-        stage.close();
     }    
-    
 }

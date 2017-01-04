@@ -32,5 +32,6 @@
          </columns>
       </TableView>
       <Button fx:id="matchScheduleClose" layoutX="815.0" layoutY="592.0" mnemonicParsing="false" onAction="#matchScheduleClose" text="Close" />
+      <Button layoutX="189.0" layoutY="592.0" mnemonicParsing="false" onAction="#testButton" text="Test Button" />
    </children>
 </AnchorPane>

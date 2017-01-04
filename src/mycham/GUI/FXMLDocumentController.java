@@ -15,6 +15,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  *
@@ -37,6 +45,32 @@ public class FXMLDocumentController implements Initializable {
     {
         listTeams = FXCollections.observableArrayList();
     }
+    
+    @FXML
+    private Button groupStageButton;
+     
+    public ObservableList<String> getList() 
+    {
+       return listTeams;
+    }
+    
+    @FXML
+    private void groupStage(ActionEvent event) throws IOException
+    {
+        
+        Stage primStage = (Stage)groupStageButton.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchSchedule.fxml"));
+        Parent root = loader.load();
+  
+        Stage stagePlaylist = new Stage();
+        stagePlaylist.setScene(new Scene(root));
+        
+        stagePlaylist.initModality(Modality.WINDOW_MODAL);
+        stagePlaylist.initOwner(primStage);
+        
+        stagePlaylist.show();
+    }
+    
     
     @FXML
     private void addTeam(ActionEvent event) 
