@@ -5,6 +5,7 @@
  */
 package mycham.GUI;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,13 +14,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  *
@@ -35,6 +43,9 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private ListView listTeamView;
+    
+    @FXML
+    private Button groupStageButton;
     
     public FXMLDocumentController()
     {
@@ -77,6 +88,24 @@ public class FXMLDocumentController implements Initializable {
     {
         Collections.shuffle(listTeams);
     }
+ 
+  @FXML
+ private void groupStage(ActionEvent event) throws IOException
+    {
+        
+        Stage primStage = (Stage)groupStageButton.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchSchedule.fxml"));
+        Parent root = loader.load();
+  
+        Stage stagePlaylist = new Stage();
+        stagePlaylist.setScene(new Scene(root));
+        
+        stagePlaylist.initModality(Modality.WINDOW_MODAL);
+        stagePlaylist.initOwner(primStage);
+        
+        stagePlaylist.show();
+    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 

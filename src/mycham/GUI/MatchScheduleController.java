@@ -32,10 +32,9 @@ public class MatchScheduleController implements Initializable {
     }
 
     @FXML
-    private void songCancel(ActionEvent event) 
+    private void matchScheduleClose(ActionEvent event) 
     {
         Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
         stage.close();
     }    
-    
 }
