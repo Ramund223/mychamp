@@ -48,7 +48,17 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
-        @FXML
+    @FXML
+    private void editTeam(ActionEvent event) 
+    {
+        final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
+        if (selectedItem != -1)
+        {
+            listTeamView.getItems().get(selectedItem);
+        }
+    }
+    
+    @FXML
     private void deleteTeam(ActionEvent event) 
     {
         final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
