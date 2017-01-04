@@ -6,7 +6,6 @@
 package mycham.GUI;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -14,11 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -27,6 +22,8 @@ import javafx.scene.control.TextField;
  */
 
 public class FXMLDocumentController implements Initializable {
+    
+    public boolean eventStarted = false;
     
     ObservableList<String> listTeams;
     
@@ -44,7 +41,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void addTeam(ActionEvent event) 
     {
-        if (!textFieldAddTeam.getText().isEmpty())
+        if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
             listTeams.add(textFieldAddTeam.getText());
             textFieldAddTeam.clear();
@@ -76,6 +73,7 @@ public class FXMLDocumentController implements Initializable {
     private void shuffleButton(ActionEvent event) 
     {
         Collections.shuffle(listTeams);
+        eventStarted = true;
     }
     
     @Override

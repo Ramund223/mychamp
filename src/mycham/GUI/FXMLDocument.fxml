@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.FXMLDocumentController">
     <children>
         <Button layoutX="244.0" layoutY="36.0" onAction="#addTeam" text="Add Team" />
       <TextField fx:id="textFieldAddTeam" layoutX="39.0" layoutY="36.0" />
