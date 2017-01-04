@@ -38,6 +38,8 @@ public class FXMLDocumentController implements Initializable {
     
     ObservableList<String> listTeams;
     
+    
+    
     @FXML
     private TextField textFieldAddTeam;
     
@@ -50,6 +52,10 @@ public class FXMLDocumentController implements Initializable {
     public FXMLDocumentController()
     {
         listTeams = FXCollections.observableArrayList();
+    }
+    
+    public ObservableList<String> getList() {
+       return listTeams;
     }
     
     @FXML
