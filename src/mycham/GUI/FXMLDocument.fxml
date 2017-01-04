@@ -9,9 +9,12 @@
     <children>
         <Button layoutX="244.0" layoutY="36.0" onAction="#addTeam" text="Add Team" />
       <TextField fx:id="textFieldAddTeam" layoutX="39.0" layoutY="36.0" />
-      <Button layoutX="61.0" layoutY="209.0" mnemonicParsing="false" onAction="#testButton2" text="TestButton2" />
+      <Button layoutX="61.0" layoutY="209.0" mnemonicParsing="false" onAction="#testButton2" text="Fuck Button" />
       <Button layoutX="266.0" layoutY="82.0" mnemonicParsing="false" onAction="#shuffleButton" text="Shuffle Teams" />
       <ListView fx:id="listTeamView" layoutX="244.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="344.0" layoutY="36.0" mnemonicParsing="false" onAction="#deleteTeam" text="Delete Team" />
+      <Button layoutX="221.0" layoutY="436.0" mnemonicParsing="false" onAction="#startTour" text="Start tour" />
+      <Button layoutX="350.0" layoutY="436.0" mnemonicParsing="false" onAction="#resetTour" text="Reset" />
+      <Button layoutX="55.0" layoutY="255.0" mnemonicParsing="false" onAction="#addDummy" text="Dummy Team" />
     </children>
 </AnchorPane>

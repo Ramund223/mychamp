@@ -73,7 +73,6 @@ public class FXMLDocumentController implements Initializable {
     private void shuffleButton(ActionEvent event) 
     {
         Collections.shuffle(listTeams);
-        eventStarted = true;
     }
     
     @Override
@@ -81,4 +80,50 @@ public class FXMLDocumentController implements Initializable {
     {
         listTeamView.setItems(listTeams);
     }    
+    
+    @FXML
+    private void startTour(ActionEvent event) 
+    {
+        if(listTeams.size() >= 12 && listTeams.size() <= 16)
+        {
+            eventStarted = true;
+            System.out.println("Tour started");
+        }
+        else
+        {
+            System.out.println("Team is not correct size");
+        }
+    }
+
+    @FXML
+    private void resetTour(ActionEvent event) 
+    {
+        eventStarted = false;
+        listTeamView.getItems().removeAll(listTeams);
+        System.out.println("New event initiated");
+    }
+    
+    /*
+    NOTE TO EVERYONE!
+    Hardcode below, to be removed!
+    If you are a teacher, don't look at it!
+    Unless you prefer to add 12 teams automatically
+    */
+    @FXML
+    private void addDummy(ActionEvent event) 
+    {
+        listTeams.add("Alfa");
+        listTeams.add("Bravo");
+        listTeams.add("Charlie");
+        listTeams.add("Delta");
+        listTeams.add("Echo");
+        listTeams.add("Foxtrot");
+        listTeams.add("Golf");
+        listTeams.add("Hotel");
+        listTeams.add("India");
+        listTeams.add("Juliett");
+        listTeams.add("Kilo");
+        listTeams.add("Lima");
+        
+    }
 }
