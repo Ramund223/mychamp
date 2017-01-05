@@ -5,6 +5,7 @@
  */
 package mycham.GUI;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.ResourceBundle;
@@ -12,15 +13,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import java.io.IOException;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -88,7 +87,14 @@ public class FXMLDocumentController implements Initializable {
         final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
         if (selectedItem != -1)
         {
-            listTeamView.getItems().get(selectedItem);
+            if(textFieldAddTeam.getText().isEmpty())
+            {
+                textFieldAddTeam.setText((String) listTeamView.getItems().get(selectedItem));
+            }
+            else
+            {
+                listTeams.set(selectedItem, textFieldAddTeam.getText());
+            }
         }
     }
     
@@ -156,18 +162,20 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void addDummy(ActionEvent event) 
     {
-        listTeams.add("Alfa");
-        listTeams.add("Bravo");
-        listTeams.add("Charlie");
-        listTeams.add("Delta");
-        listTeams.add("Echo");
-        listTeams.add("Foxtrot");
-        listTeams.add("Golf");
-        listTeams.add("Hotel");
-        listTeams.add("India");
-        listTeams.add("Juliett");
-        listTeams.add("Kilo");
-        listTeams.add("Lima");
-        
+        if(eventStarted == false)
+        {
+            listTeams.add("Alfa");
+            listTeams.add("Bravo");
+            listTeams.add("Charlie");
+            listTeams.add("Delta");
+            listTeams.add("Echo");
+            listTeams.add("Foxtrot");
+            listTeams.add("Golf");
+            listTeams.add("Hotel");
+            listTeams.add("India");
+            listTeams.add("Juliett");
+            listTeams.add("Kilo");
+            listTeams.add("Lima");
+        }       
     }
 }
