@@ -63,6 +63,114 @@ public class MatchScheduleController implements Initializable {
     @FXML
     private Label match12A;
     
+    @FXML
+    private Label match1B;
+    
+    @FXML
+    private Label match2B;
+    
+    @FXML
+    private Label match3B;
+    
+    @FXML
+    private Label match4B;
+    
+    @FXML
+    private Label match5B;
+    
+    @FXML
+    private Label match6B;
+    
+    @FXML
+    private Label match7B;
+    
+    @FXML
+    private Label match8B;
+    
+    @FXML
+    private Label match9B;
+    
+    @FXML
+    private Label match10B;
+    
+    @FXML
+    private Label match11B;
+    
+    @FXML
+    private Label match12B;
+    
+    @FXML
+    private Label match1C;
+    
+    @FXML
+    private Label match2C;
+    
+    @FXML
+    private Label match3C;
+    
+    @FXML
+    private Label match4C;
+    
+    @FXML
+    private Label match5C;
+    
+    @FXML
+    private Label match6C;
+    
+    @FXML
+    private Label match7C;
+    
+    @FXML
+    private Label match8C;
+    
+    @FXML
+    private Label match9C;
+    
+    @FXML
+    private Label match10C;
+    
+    @FXML
+    private Label match11C;
+    
+    @FXML
+    private Label match12C;
+    
+    @FXML
+    private Label match1D;
+    
+    @FXML
+    private Label match2D;
+    
+    @FXML
+    private Label match3D;
+    
+    @FXML
+    private Label match4D;
+    
+    @FXML
+    private Label match5D;
+    
+    @FXML
+    private Label match6D;
+    
+    @FXML
+    private Label match7D;
+    
+    @FXML
+    private Label match8D;
+    
+    @FXML
+    private Label match9D;
+    
+    @FXML
+    private Label match10D;
+    
+    @FXML
+    private Label match11D;
+    
+    @FXML
+    private Label match12D;
+    
     private MainViewController mainClass;
 
     ObservableList<String> listTeams;
@@ -83,6 +191,8 @@ public class MatchScheduleController implements Initializable {
     
     private void labels()
     {
+        
+        //Group A
         match1A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
         match2A.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
         match3A.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
@@ -95,6 +205,33 @@ public class MatchScheduleController implements Initializable {
         match10A.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
         match11A.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
         match12A.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
+        //Group B
+        match1B.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
+        match2B.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
+        match3B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
+        match4B.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
+        match5B.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
+        match6B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
+        match7B.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
+        match8B.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
+        match9B.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
+        match10B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
+        match11B.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
+        match12B.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
+        //Group C
+        match1C.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
+        match2C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
+        match3C.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
+        match4C.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
+        match5C.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
+        match6C.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
+        match7C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
+        match8C.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
+        match9C.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
+        match10C.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
+        match11C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
+        match12C.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
+
     }
     
     @FXML
