@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  * @author Emil
  */
 
-public class FXMLDocumentController implements Initializable {
+public class MainViewController implements Initializable {
     
     public boolean eventStarted = false;
     
@@ -41,18 +41,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ListView listTeamView;
     
-    public FXMLDocumentController()
+    public MainViewController()
     {
-        listTeams = FXCollections.observableArrayList();
+        listTeams = TeamModel.getInstance().getTeam();
     }
     
     @FXML
     private Button groupStageButton;
      
-    public ObservableList<String> getList() 
-    {
-       return listTeams;
-    }
     
     @FXML
     private void groupStage(ActionEvent event) throws IOException

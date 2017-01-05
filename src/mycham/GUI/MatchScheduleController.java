@@ -19,19 +19,18 @@ import javafx.stage.Stage;
  *
  * @author Nicolai
  */
-public class MatchScheduleController extends FXMLDocumentController implements Initializable {
+public class MatchScheduleController implements Initializable {
     
     @FXML
     private Button matchScheduleClose;
 
-   private FXMLDocumentController mainClass;
+   private MainViewController mainClass;
 
    ObservableList<String> listTeams;
    
    public MatchScheduleController() 
    {
-        mainClass = new FXMLDocumentController();
-        listTeams = mainClass.getList();
+        listTeams = TeamModel.getInstance().getTeam();
    }
     
     @FXML
@@ -49,13 +48,11 @@ public class MatchScheduleController extends FXMLDocumentController implements I
         {   
             System.out.println(listTeams.get(i));
         }
-        System.out.println("LOL");
         
         if (listTeams.isEmpty()) 
         {
             System.out.println("EMPTY");
         }
-        System.out.println(mainClass.getList().toString());
     }
     
     /**

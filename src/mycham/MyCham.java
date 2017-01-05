@@ -19,7 +19,7 @@ public class MyCham extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("GUI/FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GUI/MainView.fxml"));
         
         Scene scene = new Scene(root);
         
