@@ -58,13 +58,15 @@ public class MainViewController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchSchedule.fxml"));
         Parent root = loader.load();
   
-        Stage stagePlaylist = new Stage();
-        stagePlaylist.setScene(new Scene(root));
+        Stage stageMainview = new Stage();
+        stageMainview.setScene(new Scene(root));
         
-        stagePlaylist.initModality(Modality.WINDOW_MODAL);
-        stagePlaylist.initOwner(primStage);
+        stageMainview.setTitle("Group Stage");
         
-        stagePlaylist.show();
+        stageMainview.initModality(Modality.WINDOW_MODAL);
+        stageMainview.initOwner(primStage);
+        
+        stageMainview.show();
     }
     
     

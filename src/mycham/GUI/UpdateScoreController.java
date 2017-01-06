@@ -7,7 +7,10 @@ package mycham.GUI;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -19,6 +22,13 @@ public class UpdateScoreController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+    @FXML
+    private TextField homePointsTextfield;
+    
+    @FXML
+    private Label teamName;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
