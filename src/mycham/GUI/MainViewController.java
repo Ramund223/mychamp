@@ -5,22 +5,20 @@
  */
 package mycham.GUI;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import java.io.IOException;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -40,6 +38,8 @@ public class MainViewController implements Initializable {
     
     @FXML
     private ListView listTeamView;
+    @FXML
+    private Button finalsButton;
     
     public MainViewController()
     {
@@ -58,15 +58,31 @@ public class MainViewController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchSchedule.fxml"));
         Parent root = loader.load();
   
-        Stage stageMainview = new Stage();
-        stageMainview.setScene(new Scene(root));
+        Stage stageMainView = new Stage();
+        stageMainView.setScene(new Scene(root));
         
-        stageMainview.setTitle("Group Stage");
+        stageMainView.setTitle("Group Stage");
         
-        stageMainview.initModality(Modality.WINDOW_MODAL);
-        stageMainview.initOwner(primStage);
+        stageMainView.initModality(Modality.WINDOW_MODAL);
+        stageMainView.initOwner(primStage);
         
-        stageMainview.show();
+        stageMainView.show();
+    }
+    
+    @FXML
+    private void finals(ActionEvent event) throws IOException
+    {
+        Stage primStage = (Stage)finalsButton.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Finals.fxml"));
+        Parent root = loader.load();
+  
+        Stage stageFinals = new Stage();
+        stageFinals.setScene(new Scene(root));
+        
+        stageFinals.initModality(Modality.WINDOW_MODAL);
+        stageFinals.initOwner(primStage);
+        
+        stageFinals.show();
     }
     
     
@@ -98,12 +114,17 @@ public class MainViewController implements Initializable {
     }
     
     @FXML
-    private void deleteTeam(ActionEvent event) 
+    private void deleteTeam(ActionEvent event)
     {
         final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
-        if (selectedItem != -1)
+        if (selectedItem != -1 && eventStarted == false)
         {
             listTeamView.getItems().remove(selectedItem);
+        }
+        else if(selectedItem != -1 && eventStarted == true)
+        {
+            textFieldAddTeam.clear();
+            listTeams.set(selectedItem, textFieldAddTeam.getText());
         }
     }
     

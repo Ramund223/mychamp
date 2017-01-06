@@ -266,7 +266,7 @@ private void updateTeams()
             match10C.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
             match11C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
             match12C.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
-        }
+            }
         //Group D
         if (listTeams.size() == 13)
         {
