@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.FinalsController">
+   <children>
+      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#quarterFinal1Button">
+         <graphic>
+            <Label fx:id="quaterFinal1Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="45.0" mnemonicParsing="false" onAction="#quarterFinal2Button">
+         <graphic>
+            <Label fx:id="quaterFinal2Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#quarterFinal3Button">
+         <graphic>
+            <Label fx:id="quaterFinal3Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="138.0" mnemonicParsing="false" onAction="#quarterFinal4Button">
+         <graphic>
+            <Label fx:id="quaterFinal4Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#quarterFinal8Button">
+         <graphic>
+            <Label fx:id="quaterFinal8Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="324.0" mnemonicParsing="false" onAction="#quarterFinal7Button">
+         <graphic>
+            <Label fx:id="quaterFinal7Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="231.0" mnemonicParsing="false" onAction="#quarterFinal5Button">
+         <graphic>
+            <Label fx:id="quaterFinal5Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="14.0" layoutY="262.0" mnemonicParsing="false" onAction="#quarterFinal6Button">
+         <graphic>
+            <Label fx:id="quaterFinal6Label" text="QuaterFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="176.0" layoutY="247.0" mnemonicParsing="false" onAction="#semiFinal3Button">
+         <graphic>
+            <Label fx:id="semiFinal3Label" text="SemiFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="176.0" layoutY="340.0" mnemonicParsing="false" onAction="#semiFinal4Button">
+         <graphic>
+            <Label fx:id="semiFinal4Label" text="SemiFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="176.0" layoutY="123.0" mnemonicParsing="false" onAction="#semiFinal2Button">
+         <graphic>
+            <Label fx:id="semiFinal2Label" text="SemiFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="176.0" layoutY="30.0" mnemonicParsing="false" onAction="#semiFinal1Button">
+         <graphic>
+            <Label fx:id="semiFinal1Label" text="SemiFinal" />
+         </graphic>
+      </Button>
+      <Button layoutX="317.0" layoutY="76.0" mnemonicParsing="false" onAction="#final1Button">
+         <graphic>
+            <Label fx:id="final1Label" text="Final" />
+         </graphic>
+      </Button>
+      <Button layoutX="317.0" layoutY="293.0" mnemonicParsing="false" onAction="#final2Button">
+         <graphic>
+            <Label fx:id="final2Label" text="Final" />
+         </graphic>
+      </Button>
+      <Button layoutX="422.0" layoutY="185.0" mnemonicParsing="false" onAction="#winnerButton">
+         <graphic>
+            <Label fx:id="winnerLabel" text="Winner" />
+         </graphic>
+      </Button>
+      <Button layoutX="490.0" layoutY="356.0" mnemonicParsing="false" onAction="#readyButton" text="Ready Finals" />
+   </children>
+</AnchorPane>
