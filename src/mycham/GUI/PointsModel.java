@@ -12,28 +12,29 @@ import javafx.collections.ObservableList;
  *
  * @author Emil
  */
-public class TeamModel 
+public class PointsModel 
 {
-    private static TeamModel INSTANCE;
+    private static PointsModel INSTANCE;
     
-    private final ObservableList<String> teamList;
+    private final ObservableList<String> pointsList;
 
-    public static synchronized TeamModel getInstance()
+    public static synchronized PointsModel getInstance()
     {
         if(INSTANCE == null)
         {
-            INSTANCE = new TeamModel();
+            INSTANCE = new PointsModel();
         }
         return INSTANCE;
     }
     
-    private TeamModel() 
+    private PointsModel() 
     {
-        teamList = FXCollections.observableArrayList();
+        pointsList = FXCollections.observableArrayList();
     }
     
-    public ObservableList<String> getTeam()
+    public ObservableList<String> getPoints()
     {
-        return teamList;
+        return pointsList;
     }
+    
 }

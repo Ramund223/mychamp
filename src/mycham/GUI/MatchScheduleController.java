@@ -39,10 +39,10 @@ public class MatchScheduleController implements Initializable {
     private Label publicMessageLabel;
     
     @FXML
-    private Label match1A;
+    private Label match1ALabel;
     
     @FXML
-    private Label match1ALabel;
+    private Label match1A;
     
     @FXML
     private Label match2A;
@@ -192,7 +192,6 @@ public class MatchScheduleController implements Initializable {
     public MatchScheduleController() 
     {
         listTeams = TeamModel.getInstance().getTeam();
-        
     }
     
     @FXML
