@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mycham.GUI;
+package mycham.GUI.Model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import mycham.BE.Team;
 
 /**
  *
@@ -16,7 +17,7 @@ public class TeamModel
 {
     private static TeamModel INSTANCE;
     
-    private final ObservableList<String> teamList;
+    private final ObservableList<Team> teamList;
 
     public static synchronized TeamModel getInstance()
     {
@@ -32,7 +33,13 @@ public class TeamModel
         teamList = FXCollections.observableArrayList();
     }
     
-    public ObservableList<String> getTeam()
+    public void createTeam(String teamName)
+    {
+        Team team = new Team(teamName);
+        teamList.add(team);
+    }
+    
+    public ObservableList<Team> getTeam()
     {
         return teamList;
     }

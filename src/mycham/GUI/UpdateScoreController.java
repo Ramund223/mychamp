@@ -5,6 +5,7 @@
  */
 package mycham.GUI;
 
+import mycham.GUI.Model.TeamModel;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import mycham.BE.Team;
 
 /**
  * FXML Controller class
@@ -45,7 +47,7 @@ public class UpdateScoreController implements Initializable {
     @FXML
     private Label guestTeam;
     
-    ObservableList<String> listTeams;
+    ObservableList<Team> listTeams;
     
     public UpdateScoreController() 
     {
