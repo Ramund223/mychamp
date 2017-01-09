@@ -100,7 +100,7 @@
             <Label text="Round 1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Label fx:id="ErrorLabel" layoutX="610.0" layoutY="21.0" text="              " />
+      <Label fx:id="publicMessageLabel" layoutX="610.0" layoutY="21.0" text="              " />
       <Button fx:id="match1AButton" layoutX="258.0" layoutY="16.0" mnemonicParsing="false" onAction="#match1AButton">
          <graphic>
             <Label fx:id="match1ALabel" text="Match 1" />

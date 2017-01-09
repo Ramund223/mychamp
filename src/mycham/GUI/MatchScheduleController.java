@@ -233,7 +233,7 @@ private void updateTeams()
     {
         if (listTeams.size() == 2)
         {
-        match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
+            match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
         }
         if (listTeams.size() >= 12 && listTeams.size() <= 16)
         {
