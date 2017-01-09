@@ -62,103 +62,93 @@ public class FinalsController implements Initializable {
     @FXML
     private void quarterFinal1Button(ActionEvent event) 
     {
-        if (semiFinal1Label != quaterFinal2Label)
-        {
-            semiFinal1Label.setText("" + quaterFinal1Label);
-        }
+        semiFinal1Label.setText("" + quaterFinal1Label.getText());
     }
 
     @FXML
     private void quarterFinal2Button(ActionEvent event) 
     {
-        if (semiFinal1Label != quaterFinal1Label)
-        {
-            semiFinal1Label.setText("" + quaterFinal2Label);
-        }
+
+        semiFinal1Label.setText("" + quaterFinal2Label.getText());
+
     }
 
     @FXML
     private void quarterFinal3Button(ActionEvent event) 
     {
-        if (semiFinal2Label != quaterFinal4Label)
-        {
-            semiFinal2Label.setText("" + quaterFinal3Label);
-        }
+        semiFinal2Label.setText("" + quaterFinal3Label.getText());
     }
 
     @FXML
     private void quarterFinal4Button(ActionEvent event)
     {
-        if (semiFinal2Label != quaterFinal3Label)
-        {
-            semiFinal2Label.setText("" + quaterFinal4Label);
-        }
-    }
-
-    @FXML
-    private void quarterFinal8Button(ActionEvent event) 
-    {
-        if (semiFinal4Label != quaterFinal7Label)
-        {
-            semiFinal4Label.setText("" + quaterFinal8Label);
-        }
-    }
-
-    @FXML
-    private void quarterFinal7Button(ActionEvent event) 
-    {
-        if (semiFinal4Label != quaterFinal8Label)
-        {
-            semiFinal4Label.setText("" + quaterFinal7Label);
-        }
+        semiFinal2Label.setText("" + quaterFinal4Label.getText());
     }
 
     @FXML
     private void quarterFinal5Button(ActionEvent event) 
     {
-        if (semiFinal3Label != quaterFinal6Label)
-        {
-            semiFinal3Label.setText("" + quaterFinal5Label);
-        }
+        semiFinal3Label.setText("" + quaterFinal5Label.getText());
     }
 
     @FXML
     private void quarterFinal6Button(ActionEvent event) 
     {
-        if (semiFinal3Label != quaterFinal5Label)
-        {
-            semiFinal3Label.setText("" + quaterFinal6Label);
-        }
+        semiFinal3Label.setText("" + quaterFinal6Label.getText());
+    }
+    
+    @FXML
+    private void quarterFinal7Button(ActionEvent event) 
+    {
+        semiFinal4Label.setText("" + quaterFinal7Label.getText());
+    }
+    
+    @FXML
+    private void quarterFinal8Button(ActionEvent event) 
+    {
+        semiFinal4Label.setText("" + quaterFinal8Label.getText());
     }
 
+    @FXML
+    private void semiFinal1Button(ActionEvent event) 
+    {
+        final1Label.setText("" + semiFinal1Label.getText());
+    }
+    
+    @FXML
+    private void semiFinal2Button(ActionEvent event) 
+    {
+        final1Label.setText("" + semiFinal2Label.getText());
+    }
+    
     @FXML
     private void semiFinal3Button(ActionEvent event) 
     {
+        final2Label.setText("" + semiFinal3Label.getText());
+    }
+
+    @FXML
+    private void semiFinal4Button(ActionEvent event) 
+    {
+        final2Label.setText("" + semiFinal4Label.getText());
+    }
+
+    @FXML
+    private void final1Button(ActionEvent event) 
+    {
+        winnerLabel.setText("" + final1Label.getText());
+    }
+
+    @FXML
+    private void final2Button(ActionEvent event) 
+    {
+        winnerLabel.setText("" + final2Label.getText());
+    }
+
+    @FXML
+    private void winnerButton(ActionEvent event) 
+    {
         
-    }
-
-    @FXML
-    private void semiFinal4Button(ActionEvent event) {
-    }
-
-    @FXML
-    private void semiFinal2Button(ActionEvent event) {
-    }
-
-    @FXML
-    private void semiFinal1Button(ActionEvent event) {
-    }
-
-    @FXML
-    private void final1Button(ActionEvent event) {
-    }
-
-    @FXML
-    private void final2Button(ActionEvent event) {
-    }
-
-    @FXML
-    private void winnerButton(ActionEvent event) {
     }
 
     private void Finalists()
