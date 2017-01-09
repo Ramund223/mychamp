@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -38,8 +39,12 @@ public class MainViewController implements Initializable {
     
     @FXML
     private ListView listTeamView;
+    
     @FXML
     private Button finalsButton;
+    
+    @FXML
+    private Label publicMessageLabel;
     
     public MainViewController()
     {
@@ -128,6 +133,8 @@ public class MainViewController implements Initializable {
         }
     }
     
+    
+    //DELETE THIS -v
     @FXML
     private void testButton2(ActionEvent event) 
     {
@@ -157,11 +164,11 @@ public class MainViewController implements Initializable {
         if(listTeams.size() >= 12 && listTeams.size() <= 16)
         {
             eventStarted = true;
-            System.out.println("Tour started");
+            publicMessageLabel.setText("Tour started");
         }
         else
         {
-            System.out.println("Team is not correct size");
+            publicMessageLabel.setText("Team is not correct size");
         }
     }
 
@@ -170,7 +177,7 @@ public class MainViewController implements Initializable {
     {
         eventStarted = false;
         listTeamView.getItems().removeAll(listTeams);
-        System.out.println("New event initiated");
+        publicMessageLabel.setText("New event initiated!");
     }
     
     /*
