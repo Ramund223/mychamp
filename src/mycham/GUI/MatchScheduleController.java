@@ -36,7 +36,7 @@ public class MatchScheduleController implements Initializable {
     private Button match1AButton;
     
     @FXML
-    private Label notEnoughTeamsLabel;
+    private Label publicMessageLabel;
     
     @FXML
     private Label match1A;
@@ -206,28 +206,38 @@ public class MatchScheduleController implements Initializable {
     @FXML
     private void match1AButton(ActionEvent event)throws IOException
     {
-                
-        Stage primStage = (Stage)match1AButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateScore.fxml"));
-        Parent root = loader.load();
+        if (listTeams.size() >= 2 )
+        {
+            Stage primStage = (Stage)match1AButton.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateScore.fxml"));
+            Parent root = loader.load();
   
-        Stage stageGroupStage = new Stage();
-        stageGroupStage.setScene(new Scene(root));
+            Stage stageGroupStage = new Stage();
+            stageGroupStage.setScene(new Scene(root));
         
-        stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
+            stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
         
-        stageGroupStage.initModality(Modality.WINDOW_MODAL);
-        stageGroupStage.initOwner(primStage);
+            stageGroupStage.initModality(Modality.WINDOW_MODAL);
+            stageGroupStage.initOwner(primStage);
         
-        stageGroupStage.show();
+            stageGroupStage.show();
+            System.out.println("");
+        }
+        else
+        {
+            publicMessageLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
+        }
     }
     
 private void updateTeams()
     {
+        if (listTeams.size() == 2)
+        {
         match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
+        }
         if (listTeams.size() >= 12 && listTeams.size() <= 16)
         {
-            //Group A
+        //Group A
             match1A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
             match2A.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
             match3A.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
@@ -240,7 +250,7 @@ private void updateTeams()
             match10A.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
             match11A.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
             match12A.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
-            //Group B
+        //Group B
             match1B.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
             match2B.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
             match3B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
@@ -253,7 +263,7 @@ private void updateTeams()
             match10B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
             match11B.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
             match12B.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
-            //Group C
+        //Group C
             match1C.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
             match2C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
             match3C.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
@@ -304,12 +314,10 @@ private void updateTeams()
             match12D.setText("Hjemmebane: "+ "(" + listTeams.get(15) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(12) + ")");
         }
         
-        if (listTeams.size() < 12 || listTeams.size() > 16)
+        if (listTeams.size() < 12 || listTeams.size() > 16 || listTeams.isEmpty())
         {
-            notEnoughTeamsLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
+            publicMessageLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
         }
-
-
     }
     
     @FXML
