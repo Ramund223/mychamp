@@ -5,7 +5,6 @@
  */
 package mycham.GUI;
 
-import mycham.GUI.Model.TeamModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +19,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import mycham.BE.Team;
 
 /**
  * FXML Controller class
@@ -188,7 +186,7 @@ public class MatchScheduleController implements Initializable {
     
     private MainViewController mainClass;
 
-    ObservableList<Team> listTeams;
+    ObservableList<String> listTeams;
    
     public MatchScheduleController() 
     {

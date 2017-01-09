@@ -5,7 +5,6 @@
  */
 package mycham.GUI;
 
-import mycham.GUI.Model.TeamModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
@@ -33,7 +32,7 @@ public class MainViewController implements Initializable {
     
     public boolean eventStarted = false;
     
-    private TeamModel teamModel;
+    ObservableList<String> listTeams;
     
     @FXML
     private TextField textFieldAddTeam;
@@ -49,7 +48,7 @@ public class MainViewController implements Initializable {
     
     public MainViewController()
     {
-        teamModel = TeamModel.getInstance();
+        listTeams = TeamModel.getInstance().getTeam();
     }
     
     @FXML
@@ -85,8 +84,6 @@ public class MainViewController implements Initializable {
         Stage stageFinals = new Stage();
         stageFinals.setScene(new Scene(root));
         
-        stageFinals.setTitle("Finals");
-        
         stageFinals.initModality(Modality.WINDOW_MODAL);
         stageFinals.initOwner(primStage);
         
@@ -99,7 +96,7 @@ public class MainViewController implements Initializable {
     {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
-            teamModel.createTeam(textFieldAddTeam.getText());
+            listTeams.add(textFieldAddTeam.getText());
             textFieldAddTeam.clear();
         }
     }
@@ -116,7 +113,7 @@ public class MainViewController implements Initializable {
             }
             else
             {
-                teamModel.getTeam().get(selectedItem).setName(textFieldAddTeam.getText());
+                listTeams.set(selectedItem, textFieldAddTeam.getText());
             }
         }
     }
@@ -132,7 +129,7 @@ public class MainViewController implements Initializable {
         else if(selectedItem != -1 && eventStarted == true)
         {
             textFieldAddTeam.clear();
-            teamModel.getTeam().remove(selectedItem);
+            listTeams.set(selectedItem, textFieldAddTeam.getText());
         }
     }
     
@@ -141,35 +138,37 @@ public class MainViewController implements Initializable {
     @FXML
     private void testButton2(ActionEvent event) 
     {
-        for(int i = 0; i < teamModel.getTeam().size(); i++) 
+        for(int i = 0; i < listTeams.size(); i++) 
         {   
-            System.out.println(teamModel.getTeam().get(i));
+            System.out.println(listTeams.get(i));
         }
+            final int selectedIdx = listTeamView.getSelectionModel().getSelectedIndex();
+            listTeamView.getItems().remove(selectedIdx);
     }
     
     @FXML
     private void shuffleButton(ActionEvent event) 
     {
-        Collections.shuffle(teamModel.getTeam());
+        Collections.shuffle(listTeams);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        listTeamView.setItems(teamModel.getTeam());
+        listTeamView.setItems(listTeams);
     }    
     
     @FXML
     private void startTour(ActionEvent event) 
     {
-        if(teamModel.getTeam().size() >= 12 && teamModel.getTeam().size() <= 16)
+        if(listTeams.size() >= 12 && listTeams.size() <= 16)
         {
             eventStarted = true;
-            publicMessageLabel.setText("Tour started!");
+            publicMessageLabel.setText("Tour started");
         }
         else
         {
-            publicMessageLabel.setText("Team is not correct size!");
+            publicMessageLabel.setText("Team is not correct size");
         }
     }
 
@@ -177,7 +176,7 @@ public class MainViewController implements Initializable {
     private void resetTour(ActionEvent event) 
     {
         eventStarted = false;
-        listTeamView.getItems().removeAll(teamModel.getTeam());
+        listTeamView.getItems().removeAll(listTeams);
         publicMessageLabel.setText("New event initiated!");
     }
     
@@ -193,18 +192,18 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
-            teamModel.getTeam();
-//            listTeams.add("Bravo");
-//            listTeams.add("Charlie");
-//            listTeams.add("Delta");
-//            listTeams.add("Echo");
-//            listTeams.add("Foxtrot");
-//            listTeams.add("Golf");
-//            listTeams.add("Hotel");
-//            listTeams.add("India");
-//            listTeams.add("Juliett");
-//            listTeams.add("Kilo");
-//            listTeams.add("Lima");
+            listTeams.add("Alfa");
+            listTeams.add("Bravo");
+            listTeams.add("Charlie");
+            listTeams.add("Delta");
+            listTeams.add("Echo");
+            listTeams.add("Foxtrot");
+            listTeams.add("Golf");
+            listTeams.add("Hotel");
+            listTeams.add("India");
+            listTeams.add("Juliett");
+            listTeams.add("Kilo");
+            listTeams.add("Lima");
         }       
     }
 }
