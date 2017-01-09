@@ -23,6 +23,8 @@ public class MyCham extends Application {
         
         Scene scene = new Scene(root);
         
+        stage.setTitle("Football Championship");
+        
         stage.setScene(scene);
         stage.show();
     }
