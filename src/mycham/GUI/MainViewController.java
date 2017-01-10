@@ -213,18 +213,19 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
-            teamModel.getTeam();
-//            listTeams.add("Bravo");
-//            listTeams.add("Charlie");
-//            listTeams.add("Delta");
-//            listTeams.add("Echo");
-//            listTeams.add("Foxtrot");
-//            listTeams.add("Golf");
-//            listTeams.add("Hotel");
-//            listTeams.add("India");
-//            listTeams.add("Juliett");
-//            listTeams.add("Kilo");
-//            listTeams.add("Lima");
+            teamModel.getTeam().add(new Team("Alpha"));
+            teamModel.getTeam().add(new Team("Bravo"));
+            teamModel.getTeam().add(new Team("Charlie"));
+            teamModel.getTeam().add(new Team("Delta"));
+            teamModel.getTeam().add(new Team("Echo"));
+            teamModel.getTeam().add(new Team("Foxtrot"));
+            teamModel.getTeam().add(new Team("Golf"));
+            teamModel.getTeam().add(new Team("Hotel"));
+            teamModel.getTeam().add(new Team("India"));
+            teamModel.getTeam().add(new Team("Juliett"));
+            teamModel.getTeam().add(new Team("Kilo"));
+            teamModel.getTeam().add(new Team("Magic Mike"));
+            
         }       
     }
 }
