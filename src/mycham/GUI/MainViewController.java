@@ -19,12 +19,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import mycham.BE.Team;
 
 /**
@@ -44,7 +46,7 @@ public class MainViewController implements Initializable {
     private TextField textFieldAddTeam;
     
     @FXML
-    private ListView listTeamView;
+    private ListView<Team> listTeamView;
     
     @FXML
     private Button finalsButton;
@@ -52,14 +54,13 @@ public class MainViewController implements Initializable {
     @FXML
     private Label publicMessageLabel;
     
+    @FXML
+    private Button groupStageButton;
+    
     public MainViewController()
     {
         teamModel = TeamModel.getInstance();
-    }
-    
-    @FXML
-    private Button groupStageButton;
-     
+    }     
     
     @FXML
     private void groupStage(ActionEvent event) throws IOException
@@ -123,19 +124,23 @@ public class MainViewController implements Initializable {
         }
     }
     
+    
+    
     @FXML
     private void editTeam(ActionEvent event) 
     {
         final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
+//        listTeamView.setCellFactory(value);
         if (selectedItem != -1)
         {
             if(textFieldAddTeam.getText().isEmpty())
             {
-                textFieldAddTeam.setText((String) listTeamView.getItems().get(selectedItem));
+                textFieldAddTeam.setText(listTeamView.getItems().get(selectedItem).toString());
             }
             else
             {
                 teamModel.getTeam().get(selectedItem).setName(textFieldAddTeam.getText());
+                
             }
         }
     }
@@ -176,7 +181,24 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) 
     {
         listTeamView.setItems(teamModel.getTeam());
-//        listTeamView.setItems(team.getName());
+        
+        listTeamView.setCellFactory(new Callback<ListView<Team>, ListCell<Team>>() {
+    @Override
+    public ListCell<Team> call(ListView<Team> lv) {
+        return new ListCell<Team>() {
+            @Override
+            public void updateItem(Team item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null) {
+                    setText(null);
+                } else {
+                    // assume MyDataType.getSomeProperty() returns a string
+                    setText(item.getName());
+                }
+            }
+        };
+    }
+});
     }    
     
     @FXML
@@ -225,7 +247,6 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team("Juliett"));
             teamModel.getTeam().add(new Team("Kilo"));
             teamModel.getTeam().add(new Team("Magic Mike"));
-            
         }       
     }
 }

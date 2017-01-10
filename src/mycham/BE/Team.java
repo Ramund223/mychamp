@@ -5,29 +5,54 @@
  */
 package mycham.BE;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author Emil
  */
 public class Team 
 {
-    private String name;
+
+    private final StringProperty name = new SimpleStringProperty();
 
     public Team(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
+    
+    
     public String getName() {
+        return name.get();
+    }
+
+    public void setName(String value) {
+        name.set(value);
+    }
+
+    public StringProperty nameProperty() {
         return name;
     }
+//    private String name;
+//
+//    public Team(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
+    
     @Override
     public String toString() {
-        return name;
+        return name.get();
     }
     
     

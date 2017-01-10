@@ -359,7 +359,8 @@ private void updateTeams()
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        updateTeams();
     }    
 }
