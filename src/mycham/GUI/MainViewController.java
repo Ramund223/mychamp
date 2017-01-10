@@ -21,8 +21,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import mycham.BE.Team;
 
 /**
  *
@@ -34,6 +37,8 @@ public class MainViewController implements Initializable {
     public boolean eventStarted = false;
     
     private TeamModel teamModel;
+    
+    private Team team;
     
     @FXML
     private TextField textFieldAddTeam;
@@ -97,10 +102,24 @@ public class MainViewController implements Initializable {
     @FXML
     private void addTeam(ActionEvent event) 
     {
+        addTeamMethod();
+    }
+    
+    public void addTeamMethod ()
+    {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
             teamModel.createTeam(textFieldAddTeam.getText());
             textFieldAddTeam.clear();
+        }
+    }
+    
+    @FXML
+    public void handleEnterPressed(KeyEvent event)
+    {
+        if (event.getCode() == KeyCode.ENTER) 
+        {
+            addTeamMethod();
         }
     }
     
@@ -157,6 +176,7 @@ public class MainViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) 
     {
         listTeamView.setItems(teamModel.getTeam());
+//        listTeamView.setItems(team.getName());
     }    
     
     @FXML
