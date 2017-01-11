@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package mycham.GUI.controller;
+package mycham.GUI.controller;
 
-import mycham.GUI.Model.TeamModel;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -17,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import mycham.BE.Team;
+import mycham.GUI.Model.TeamModel;
 
 /**
  * FXML Controller class
