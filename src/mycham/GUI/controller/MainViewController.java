@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mycham.GUI.controller;
+//package mycham.GUI.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -111,7 +111,8 @@ public class MainViewController implements Initializable {
     {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
-            teamModel.createTeam(textFieldAddTeam.getText());
+//            teamModel.createTeam(textFieldAddTeam.getText());
+            teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
             textFieldAddTeam.clear();
         }
     }
@@ -177,7 +178,6 @@ public class MainViewController implements Initializable {
         Collections.shuffle(teamModel.getTeam());
     }
     
-    @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         tableTeam.setItems(teamModel.getTeam());
@@ -218,18 +218,20 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
-            teamModel.getTeam().add(new Team("Alpha"));
-            teamModel.getTeam().add(new Team("Bravo"));
-            teamModel.getTeam().add(new Team("Charlie"));
-            teamModel.getTeam().add(new Team("Delta"));
-            teamModel.getTeam().add(new Team("Echo"));
-            teamModel.getTeam().add(new Team("Foxtrot"));
-            teamModel.getTeam().add(new Team("Golf"));
-            teamModel.getTeam().add(new Team("Hotel"));
-            teamModel.getTeam().add(new Team("India"));
-            teamModel.getTeam().add(new Team("Juliett"));
-            teamModel.getTeam().add(new Team("Kilo"));
-            teamModel.getTeam().add(new Team("Magic Mike"));
+            teamModel.getTeam().add(new Team(1, 2, 3, "Alpha"));
+//            teamModel.getTeam().add(new Team(1, 2, 2, "kasdka"));
+//            teamModel.getTeam().add(new Team("Bravo"));
+//            teamModel.getTeam().add(new Team("Charlie"));
+//            teamModel.getTeam().add(new Team("Delta"));
+//            teamModel.getTeam().add(new Team("Echo"));
+//            teamModel.getTeam().add(new Team("Foxtrot"));
+//            teamModel.getTeam().add(new Team("Golf"));
+//            teamModel.getTeam().add(new Team("Hotel"));
+//            teamModel.getTeam().add(new Team("India"));
+//            teamModel.getTeam().add(new Team("Juliett"));
+//            teamModel.getTeam().add(new Team("Kilo"));
+//            teamModel.getTeam().add(new Team("Magic Mike"));
+//            teamModel.getTeam().add(new Team(0id, 0goals, 0point, name))
         }       
     }
 }
