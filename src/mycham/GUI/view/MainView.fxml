@@ -20,11 +20,12 @@
       <Button layoutX="345.0" layoutY="36.0" mnemonicParsing="false" onAction="#editTeam" text="Edit Team" />
       <Button fx:id="groupStageButton" layoutX="68.0" layoutY="139.0" mnemonicParsing="false" onAction="#groupStage" text="Group Stage" />
       <Button fx:id="finalsButton" layoutX="88.0" layoutY="170.0" mnemonicParsing="false" onAction="#finals" text="Finals" />
-      <Label fx:id="publicMessageLabel" layoutX="209.0" layoutY="411.0" text="         " />
-      <TableView fx:id="tableTeam" layoutX="240.0" layoutY="171.0" prefHeight="266.0" prefWidth="229.0">
+      <Label fx:id="publicMessageLabel" layoutX="244.0" layoutY="422.0" text="         " />
+      <TableView fx:id="tableTeam" layoutX="240.0" layoutY="171.0" prefHeight="242.0" prefWidth="229.0">
         <columns>
           <TableColumn fx:id="listTeamView" prefWidth="228.0" text="Teams" />
         </columns>
       </TableView>
+      <Label fx:id="teamNumber" layoutX="240.0" layoutY="144.0" prefHeight="21.0" prefWidth="229.0" />
     </children>
 </AnchorPane>

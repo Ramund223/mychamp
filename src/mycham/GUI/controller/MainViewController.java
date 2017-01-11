@@ -37,6 +37,8 @@ public class MainViewController implements Initializable {
     
     public boolean eventStarted = false;
     
+    private int teamNr = 0;
+    
     private TeamModel teamModel;
     
     private Team team;
@@ -57,6 +59,8 @@ public class MainViewController implements Initializable {
     private Button groupStageButton;
     @FXML
     private TableView<Team> tableTeam;
+    @FXML
+    private Label teamNumber;
     
     public MainViewController()
     {
@@ -113,6 +117,8 @@ public class MainViewController implements Initializable {
         {
             teamModel.createTeam(textFieldAddTeam.getText());
             textFieldAddTeam.clear();
+            teamNr++;
+            teamNumber.setText("Amount of teams: " + teamNr);
         }
     }
     
@@ -153,6 +159,8 @@ public class MainViewController implements Initializable {
         if (selectedItem != -1 && eventStarted == false)
         {
             tableTeam.getItems().remove(selectedItem);
+            teamNr--;
+            teamNumber.setText("Amount of teams: " + teamNr);
         }
         else if(selectedItem != -1 && eventStarted == true)
         {
@@ -182,6 +190,7 @@ public class MainViewController implements Initializable {
     {
         tableTeam.setItems(teamModel.getTeam());
         listTeamView.setCellValueFactory(value -> new SimpleObjectProperty<>(value.getValue().getName()));
+        teamNumber.setText("Amount of teams: " + teamNr);
     }    
     
     @FXML
@@ -194,7 +203,7 @@ public class MainViewController implements Initializable {
         }
         else
         {
-            publicMessageLabel.setText("Team is not correct size!");
+            publicMessageLabel.setText("Roster is not correct size!");
         }
     }
 
@@ -204,6 +213,8 @@ public class MainViewController implements Initializable {
         eventStarted = false;
         tableTeam.getItems().removeAll(teamModel.getTeam());
         publicMessageLabel.setText("New event initiated!");
+        teamNr = 0;
+        teamNumber.setText("Amount of teams: " + teamNr);
     }
     
     /*
@@ -230,6 +241,8 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team("Juliett"));
             teamModel.getTeam().add(new Team("Kilo"));
             teamModel.getTeam().add(new Team("Magic Mike"));
+            teamNr += 12;
+            teamNumber.setText("Amount of teams: " + teamNr);
         }       
     }
 }

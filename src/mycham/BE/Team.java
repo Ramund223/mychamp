@@ -14,7 +14,6 @@ import javafx.beans.property.StringProperty;
  */
 public class Team 
 {
-
     private final StringProperty name = new SimpleStringProperty();
 
     public Team(String name) {
@@ -24,7 +23,7 @@ public class Team
     public String getName() {
         return name.get();
     }
-
+    
     public void setName(String value) {
         name.set(value);
     }
@@ -37,6 +36,4 @@ public class Team
     public String toString() {
         return name.get();
     }
-    
-    
 }
