@@ -5,7 +5,6 @@
  */
 package mycham.GUI;
 
-import mycham.GUI.Model.TeamModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +20,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mycham.BE.Team;
+import mycham.GUI.Model.TeamModel;
 
 /**
  * FXML Controller class
@@ -240,105 +240,105 @@ private void updateTeams()
         //Group A
         if (listTeams.size() <= 12)
         {
-            match1A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
-            match3A.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
-            match5A.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
-            match7A.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
-            match9A.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
-            match11A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
+            match1A.setText("Hjem: "+ "(" + listTeams.get(0) + ")" + " VS " + "Ude: " + "(" + listTeams.get(4) + ")");
+            match3A.setText("Hjem: "+ "(" + listTeams.get(4) + ")" + " VS " + "Ude: " + "(" + listTeams.get(8) + ")");
+            match5A.setText("Hjem: "+ "(" + listTeams.get(8) + ")" + " VS " + "Ude: " + "(" + listTeams.get(0) + ")");
+            match7A.setText("Hjem: "+ "(" + listTeams.get(4) + ")" + " VS " + "Ude: " + "(" + listTeams.get(0) + ")");
+            match9A.setText("Hjem: "+ "(" + listTeams.get(8) + ")" + " VS " + "Ude: " + "(" + listTeams.get(4) + ")");
+            match11A.setText("Hjem: "+ "(" + listTeams.get(0) + ")" + " VS " + "Ude: " + "(" + listTeams.get(8) + ")");
         }
         if (listTeams.size() >= 13)
         {
-            match1A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
-            match2A.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(12) + ")");
-            match3A.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
-            match4A.setText("Hjemmebane: "+ "(" + listTeams.get(12) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
-            match5A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
-            match6A.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(12) + ")");
-            match7A.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
-            match8A.setText("Hjemmebane: "+ "(" + listTeams.get(12) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
-            match9A.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(12) + ")");
-            match10A.setText("Hjemmebane: "+ "(" + listTeams.get(4) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(8) + ")");
-            match11A.setText("Hjemmebane: "+ "(" + listTeams.get(8) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(4) + ")");
-            match12A.setText("Hjemmebane: "+ "(" + listTeams.get(12) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(0) + ")");
+            match1A.setText("Hjem: "+ "(" + listTeams.get(0) + ")" + " VS " + "Ude: " + "(" + listTeams.get(4) + ")");
+            match2A.setText("Hjem: "+ "(" + listTeams.get(8) + ")" + " VS " + "Ude: " + "(" + listTeams.get(12) + ")");
+            match3A.setText("Hjem: "+ "(" + listTeams.get(4) + ")" + " VS " + "Ude: " + "(" + listTeams.get(0) + ")");
+            match4A.setText("Hjem: "+ "(" + listTeams.get(12) + ")" + " VS " + "Ude: " + "(" + listTeams.get(8) + ")");
+            match5A.setText("Hjem: "+ "(" + listTeams.get(0) + ")" + " VS " + "Ude: " + "(" + listTeams.get(8) + ")");
+            match6A.setText("Hjem: "+ "(" + listTeams.get(4) + ")" + " VS " + "Ude: " + "(" + listTeams.get(12) + ")");
+            match7A.setText("Hjem: "+ "(" + listTeams.get(8) + ")" + " VS " + "Ude: " + "(" + listTeams.get(0) + ")");
+            match8A.setText("Hjem: "+ "(" + listTeams.get(12) + ")" + " VS " + "Ude: " + "(" + listTeams.get(4) + ")");
+            match9A.setText("Hjem: "+ "(" + listTeams.get(0) + ")" + " VS " + "Ude: " + "(" + listTeams.get(12) + ")");
+            match10A.setText("Hjem: "+ "(" + listTeams.get(4) + ")" + " VS " + "Ude: " + "(" + listTeams.get(8) + ")");
+            match11A.setText("Hjem: "+ "(" + listTeams.get(8) + ")" + " VS " + "Ude: " + "(" + listTeams.get(4) + ")");
+            match12A.setText("Hjem: "+ "(" + listTeams.get(12) + ")" + " VS " + "Ude: " + "(" + listTeams.get(0) + ")");
         }
             
         //Group B
         if (listTeams.size() <= 13)
         {
-            match1B.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
-            match3B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
-            match5B.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
-            match7B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
-            match9B.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
-            match11B.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
+            match1B.setText("Hjem: "+ "(" + listTeams.get(1) + ")" + " VS " + "Ude: " + "(" + listTeams.get(5) + ")");
+            match3B.setText("Hjem: "+ "(" + listTeams.get(5) + ")" + " VS " + "Ude: " + "(" + listTeams.get(9) + ")");
+            match5B.setText("Hjem: "+ "(" + listTeams.get(9) + ")" + " VS " + "Ude: " + "(" + listTeams.get(1) + ")");
+            match7B.setText("Hjem: "+ "(" + listTeams.get(5) + ")" + " VS " + "Ude: " + "(" + listTeams.get(1) + ")");
+            match9B.setText("Hjem: "+ "(" + listTeams.get(9) + ")" + " VS " + "Ude: " + "(" + listTeams.get(5) + ")");
+            match11B.setText("Hjem: "+ "(" + listTeams.get(1) + ")" + " VS " + "Ude: " + "(" + listTeams.get(9) + ")");
         }
         if (listTeams.size() >= 14)
         {
-            match1B.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
-            match2B.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(13) + ")");
-            match3B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
-            match4B.setText("Hjemmebane: "+ "(" + listTeams.get(13) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
-            match5B.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
-            match6B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(13) + ")");
-            match7B.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
-            match8B.setText("Hjemmebane: "+ "(" + listTeams.get(13) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
-            match9B.setText("Hjemmebane: "+ "(" + listTeams.get(1) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(13) + ")");
-            match10B.setText("Hjemmebane: "+ "(" + listTeams.get(5) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(9) + ")");
-            match11B.setText("Hjemmebane: "+ "(" + listTeams.get(9) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(5) + ")");
-            match12B.setText("Hjemmebane: "+ "(" + listTeams.get(13) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
+            match1B.setText("Hjem: "+ "(" + listTeams.get(1) + ")" + " VS " + "Ude: " + "(" + listTeams.get(5) + ")");
+            match2B.setText("Hjem: "+ "(" + listTeams.get(9) + ")" + " VS " + "Ude: " + "(" + listTeams.get(13) + ")");
+            match3B.setText("Hjem: "+ "(" + listTeams.get(5) + ")" + " VS " + "Ude: " + "(" + listTeams.get(1) + ")");
+            match4B.setText("Hjem: "+ "(" + listTeams.get(13) + ")" + " VS " + "Ude: " + "(" + listTeams.get(9) + ")");
+            match5B.setText("Hjem: "+ "(" + listTeams.get(1) + ")" + " VS " + "Ude: " + "(" + listTeams.get(9) + ")");
+            match6B.setText("Hjem: "+ "(" + listTeams.get(5) + ")" + " VS " + "Ude: " + "(" + listTeams.get(13) + ")");
+            match7B.setText("Hjem: "+ "(" + listTeams.get(9) + ")" + " VS " + "Ude: " + "(" + listTeams.get(1) + ")");
+            match8B.setText("Hjem: "+ "(" + listTeams.get(13) + ")" + " VS " + "Ude: " + "(" + listTeams.get(5) + ")");
+            match9B.setText("Hjem: "+ "(" + listTeams.get(1) + ")" + " VS " + "Ude: " + "(" + listTeams.get(13) + ")");
+            match10B.setText("Hjem: "+ "(" + listTeams.get(5) + ")" + " VS " + "Ude: " + "(" + listTeams.get(9) + ")");
+            match11B.setText("Hjem: "+ "(" + listTeams.get(9) + ")" + " VS " + "Ude: " + "(" + listTeams.get(5) + ")");
+            match12B.setText("Hjem: "+ "(" + listTeams.get(13) + ")" + " VS " + "Ude: " + "(" + listTeams.get(1) + ")");
         }
         
         //Group C
         if (listTeams.size() <= 14)
         {
-            match1C.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
-            match3C.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
-            match5C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
-            match7C.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
-            match9C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
-            match11C.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
+            match1C.setText("Hjem: "+ "(" + listTeams.get(2) + ")" + " VS " + "Ude: " + "(" + listTeams.get(6) + ")");
+            match3C.setText("Hjem: "+ "(" + listTeams.get(6) + ")" + " VS " + "Ude: " + "(" + listTeams.get(10) + ")");
+            match5C.setText("Hjem: "+ "(" + listTeams.get(10) + ")" + " VS " + "Ude: " + "(" + listTeams.get(2) + ")");
+            match7C.setText("Hjem: "+ "(" + listTeams.get(6) + ")" + " VS " + "Ude: " + "(" + listTeams.get(2) + ")");
+            match9C.setText("Hjem: "+ "(" + listTeams.get(10) + ")" + " VS " + "Ude: " + "(" + listTeams.get(6) + ")");
+            match11C.setText("Hjem: "+ "(" + listTeams.get(2) + ")" + " VS " + "Ude: " + "(" + listTeams.get(10) + ")");
         }
         if (listTeams.size() >= 15)
         {
-            match1C.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
-            match2C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(14) + ")");
-            match3C.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
-            match4C.setText("Hjemmebane: "+ "(" + listTeams.get(14) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
-            match5C.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
-            match6C.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(14) + ")");
-            match7C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
-            match8C.setText("Hjemmebane: "+ "(" + listTeams.get(14) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
-            match9C.setText("Hjemmebane: "+ "(" + listTeams.get(2) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(14) + ")");
-            match10C.setText("Hjemmebane: "+ "(" + listTeams.get(6) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(10) + ")");
-            match11C.setText("Hjemmebane: "+ "(" + listTeams.get(10) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(6) + ")");
-            match12C.setText("Hjemmebane: "+ "(" + listTeams.get(14) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(2) + ")");
+            match1C.setText("Hjem: "+ "(" + listTeams.get(2) + ")" + " VS " + "Ude: " + "(" + listTeams.get(6) + ")");
+            match2C.setText("Hjem: "+ "(" + listTeams.get(10) + ")" + " VS " + "Ude: " + "(" + listTeams.get(14) + ")");
+            match3C.setText("Hjem: "+ "(" + listTeams.get(6) + ")" + " VS " + "Ude: " + "(" + listTeams.get(2) + ")");
+            match4C.setText("Hjem: "+ "(" + listTeams.get(14) + ")" + " VS " + "Ude: " + "(" + listTeams.get(10) + ")");
+            match5C.setText("Hjem: "+ "(" + listTeams.get(2) + ")" + " VS " + "Ude: " + "(" + listTeams.get(10) + ")");
+            match6C.setText("Hjem: "+ "(" + listTeams.get(6) + ")" + " VS " + "Ude: " + "(" + listTeams.get(14) + ")");
+            match7C.setText("Hjem: "+ "(" + listTeams.get(10) + ")" + " VS " + "Ude: " + "(" + listTeams.get(2) + ")");
+            match8C.setText("Hjem: "+ "(" + listTeams.get(14) + ")" + " VS " + "Ude: " + "(" + listTeams.get(6) + ")");
+            match9C.setText("Hjem: "+ "(" + listTeams.get(2) + ")" + " VS " + "Ude: " + "(" + listTeams.get(14) + ")");
+            match10C.setText("Hjem: "+ "(" + listTeams.get(6) + ")" + " VS " + "Ude: " + "(" + listTeams.get(10) + ")");
+            match11C.setText("Hjem: "+ "(" + listTeams.get(10) + ")" + " VS " + "Ude: " + "(" + listTeams.get(6) + ")");
+            match12C.setText("Hjem: "+ "(" + listTeams.get(14) + ")" + " VS " + "Ude: " + "(" + listTeams.get(2) + ")");
         }
             
         //Group D
         if (listTeams.size() <= 15)
         {
-            match1D.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
-            match3D.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
-            match5D.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
-            match7D.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
-            match9D.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
-            match11D.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
+            match1D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(7) + ")");
+            match3D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
+            match5D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(3) + ")");
+            match7D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(3) + ")");
+            match9D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(7) + ")");
+            match11D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
         }
         if (listTeams.size() == 16)
         {
-            match1D.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
-            match2D.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(15) + ")");
-            match3D.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
-            match4D.setText("Hjemmebane: "+ "(" + listTeams.get(15) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
-            match5D.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
-            match6D.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(15) + ")");
-            match7D.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
-            match8D.setText("Hjemmebane: "+ "(" + listTeams.get(15) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
-            match9D.setText("Hjemmebane: "+ "(" + listTeams.get(3) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(15) + ")");
-            match10D.setText("Hjemmebane: "+ "(" + listTeams.get(7) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(11) + ")");
-            match11D.setText("Hjemmebane: "+ "(" + listTeams.get(11) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(7) + ")");
-            match12D.setText("Hjemmebane: "+ "(" + listTeams.get(15) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(3) + ")");
+            match1D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(7) + ")");
+            match2D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(15) + ")");
+            match3D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(3) + ")");
+            match4D.setText("Hjem: "+ "(" + listTeams.get(15) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
+            match5D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
+            match6D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(15) + ")");
+            match7D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(3) + ")");
+            match8D.setText("Hjem: "+ "(" + listTeams.get(15) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
+            match9D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(15) + ")");
+            match10D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
+            match11D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(7) + ")");
+            match12D.setText("Hjem: "+ "(" + listTeams.get(15) + ")" + " VS " + "Ude: " + "(" + listTeams.get(3) + ")");
         }
         }
         
