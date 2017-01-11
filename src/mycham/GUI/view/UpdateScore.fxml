@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="328.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.UpdateScoreController">
+<AnchorPane id="AnchorPane" prefHeight="328.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.UpdateScoreController">
    <children>
       <TextField layoutX="70.0" layoutY="56.0" prefHeight="31.0" prefWidth="210.0" />
       <TextField layoutX="332.0" layoutY="56.0" prefHeight="31.0" prefWidth="210.0" />

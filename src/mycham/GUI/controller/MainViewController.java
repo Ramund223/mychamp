@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mycham.GUI;
+package mycham.GUI.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -68,7 +68,7 @@ public class MainViewController implements Initializable {
     {
         
         Stage primStage = (Stage)groupStageButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MatchSchedule.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/MatchSchedule.fxml"));
         Parent root = loader.load();
   
         Stage stageMainView = new Stage();
@@ -86,7 +86,7 @@ public class MainViewController implements Initializable {
     private void finals(ActionEvent event) throws IOException
     {
         Stage primStage = (Stage)finalsButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Finals.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/Finals.fxml"));
         Parent root = loader.load();
   
         Stage stageFinals = new Stage();
@@ -131,7 +131,6 @@ public class MainViewController implements Initializable {
     private void editTeam(ActionEvent event) 
     {
         final int selectedItem = tableTeam.getSelectionModel().getSelectedIndex();
-//        listTeamView.setCellFactory(value);
         if (selectedItem != -1)
         {
             if(textFieldAddTeam.getText().isEmpty())

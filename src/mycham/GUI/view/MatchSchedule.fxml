@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.MatchScheduleController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.MatchScheduleController">
    <children>
       <Button fx:id="matchScheduleClose" layoutX="816.0" layoutY="555.0" mnemonicParsing="false" onAction="#matchScheduleClose" text="Close" AnchorPane.bottomAnchor="14.0" />
       <Button layoutX="193.0" layoutY="555.0" mnemonicParsing="false" onAction="#updateTeams" text="Update Team Schedule" AnchorPane.bottomAnchor="14.0" />

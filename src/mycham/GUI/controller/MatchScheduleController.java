@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mycham.GUI;
+package mycham.GUI.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -209,7 +209,7 @@ public class MatchScheduleController implements Initializable {
         if (listTeams.size() >= 2 )
         {
             Stage primStage = (Stage)match1AButton.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("UpdateScore.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/UpdateScore.fxml"));
             Parent root = loader.load();
   
             Stage stageGroupStage = new Stage();
