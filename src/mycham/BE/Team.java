@@ -20,8 +20,6 @@ public class Team
     public Team(String name) {
         this.name.set(name);
     }
-
-    
     
     public String getName() {
         return name.get();
@@ -34,21 +32,6 @@ public class Team
     public StringProperty nameProperty() {
         return name;
     }
-//    private String name;
-//
-//    public Team(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-
-    
     
     @Override
     public String toString() {

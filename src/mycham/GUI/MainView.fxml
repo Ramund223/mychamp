@@ -21,9 +21,9 @@
       <Button fx:id="groupStageButton" layoutX="68.0" layoutY="139.0" mnemonicParsing="false" onAction="#groupStage" text="Group Stage" />
       <Button fx:id="finalsButton" layoutX="88.0" layoutY="170.0" mnemonicParsing="false" onAction="#finals" text="Finals" />
       <Label fx:id="publicMessageLabel" layoutX="209.0" layoutY="411.0" text="         " />
-      <TableView fx:id="tableTeam" layoutX="240.0" layoutY="171.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableTeam" layoutX="240.0" layoutY="171.0" prefHeight="266.0" prefWidth="229.0">
         <columns>
-          <TableColumn fx:id="listTeamView" prefWidth="199.0" text="C1" />
+          <TableColumn fx:id="listTeamView" prefWidth="228.0" text="Teams" />
         </columns>
       </TableView>
     </children>
