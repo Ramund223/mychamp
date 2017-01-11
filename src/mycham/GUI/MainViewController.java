@@ -141,8 +141,9 @@ public class MainViewController implements Initializable {
             else
             {
                 teamModel.getTeam().get(selectedItem).setName(textFieldAddTeam.getText());
-                
             }
+            tableTeam.getColumns().get(0).setVisible(false);
+            tableTeam.getColumns().get(0).setVisible(true);
         }
     }
     
@@ -157,7 +158,6 @@ public class MainViewController implements Initializable {
         else if(selectedItem != -1 && eventStarted == true)
         {
             textFieldAddTeam.clear();
-            teamModel.getTeam().remove(selectedItem);
         }
     }
     
