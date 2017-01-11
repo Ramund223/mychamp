@@ -5,12 +5,11 @@
  */
 package mycham.GUI;
 
-import mycham.GUI.Model.TeamModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.ResourceBundle;
-import javafx.collections.ObservableList;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,15 +18,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import mycham.BE.Team;
+import mycham.GUI.Model.TeamModel;
 
 /**
  *
@@ -46,7 +45,7 @@ public class MainViewController implements Initializable {
     private TextField textFieldAddTeam;
     
     @FXML
-    private ListView<Team> listTeamView;
+    private TableColumn<Team ,String> listTeamView;
     
     @FXML
     private Button finalsButton;
@@ -56,6 +55,8 @@ public class MainViewController implements Initializable {
     
     @FXML
     private Button groupStageButton;
+    @FXML
+    private TableView<Team> tableTeam;
     
     public MainViewController()
     {
@@ -129,13 +130,13 @@ public class MainViewController implements Initializable {
     @FXML
     private void editTeam(ActionEvent event) 
     {
-        final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
+        final int selectedItem = tableTeam.getSelectionModel().getSelectedIndex();
 //        listTeamView.setCellFactory(value);
         if (selectedItem != -1)
         {
             if(textFieldAddTeam.getText().isEmpty())
             {
-                textFieldAddTeam.setText(listTeamView.getItems().get(selectedItem).toString());
+                textFieldAddTeam.setText(tableTeam.getItems().get(selectedItem).toString());
             }
             else
             {
@@ -148,10 +149,10 @@ public class MainViewController implements Initializable {
     @FXML
     private void deleteTeam(ActionEvent event)
     {
-        final int selectedItem = listTeamView.getSelectionModel().getSelectedIndex();
+        final int selectedItem = tableTeam.getSelectionModel().getSelectedIndex();
         if (selectedItem != -1 && eventStarted == false)
         {
-            listTeamView.getItems().remove(selectedItem);
+            tableTeam.getItems().remove(selectedItem);
         }
         else if(selectedItem != -1 && eventStarted == true)
         {
@@ -180,25 +181,8 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        listTeamView.setItems(teamModel.getTeam());
-        
-        listTeamView.setCellFactory(new Callback<ListView<Team>, ListCell<Team>>() {
-    @Override
-    public ListCell<Team> call(ListView<Team> lv) {
-        return new ListCell<Team>() {
-            @Override
-            public void updateItem(Team item, boolean empty) {
-                super.updateItem(item, empty);
-                if (item == null) {
-                    setText(null);
-                } else {
-                    // assume MyDataType.getSomeProperty() returns a string
-                    setText(item.getName());
-                }
-            }
-        };
-    }
-});
+        tableTeam.setItems(teamModel.getTeam());
+        listTeamView.setCellValueFactory(value -> new SimpleObjectProperty<>(value.getValue().getName()));
     }    
     
     @FXML
@@ -219,7 +203,7 @@ public class MainViewController implements Initializable {
     private void resetTour(ActionEvent event) 
     {
         eventStarted = false;
-        listTeamView.getItems().removeAll(teamModel.getTeam());
+        tableTeam.getItems().removeAll(teamModel.getTeam());
         publicMessageLabel.setText("New event initiated!");
     }
     
