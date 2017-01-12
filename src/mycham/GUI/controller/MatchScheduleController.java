@@ -29,7 +29,6 @@ import mycham.GUI.Model.TeamModel;
  */
 public class MatchScheduleController implements Initializable {
     
-    
     @FXML
     private Button matchScheduleClose;
     

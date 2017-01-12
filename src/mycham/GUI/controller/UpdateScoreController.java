@@ -32,14 +32,10 @@ public class UpdateScoreController implements Initializable {
     @FXML
     private Button updateScoreClose;
     
-    @FXML
-    private Button updateTeams;
     
     @FXML
     private TextField homePointsTextfield;
     
-    @FXML
-    private Label teamName;
     
     @FXML
     private Label homeTeam;
