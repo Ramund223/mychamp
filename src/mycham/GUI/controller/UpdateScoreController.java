@@ -54,6 +54,8 @@ public class UpdateScoreController implements Initializable {
     {
         homeTeam.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")");
         guestTeam.setText("Udebane: "+ "(" + listTeams.get(1) + ")");
+        
+        listTeams.get(0).setGoals(0);
     }
     
     @FXML

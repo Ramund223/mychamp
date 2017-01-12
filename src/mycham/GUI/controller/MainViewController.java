@@ -262,6 +262,8 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
+//            Structure:
+//            teamModel.getTeam().add(new Team(id, goals, point, name))
             teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
             teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
             teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
@@ -275,7 +277,6 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team(11, 0, 11, "Juliett"));
             teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
             teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
-//            teamModel.getTeam().add(new Team(0id, 0goals, 0point, name))
         }       
     }
 }

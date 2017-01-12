@@ -33,13 +33,10 @@ public class MatchScheduleController implements Initializable {
     private Button matchScheduleClose;
     
     @FXML
-    private Button match1AButton;
+    private Button matchSelecter;
     
     @FXML
     private Label publicMessageLabel;
-    
-    @FXML
-    private Label match1ALabel;
     
     @FXML
     private Label match1A;
@@ -203,24 +200,24 @@ public class MatchScheduleController implements Initializable {
     }
     
     @FXML
-    private void match1AButton(ActionEvent event)throws IOException
+    private void matchSelecter(ActionEvent event)throws IOException
     {
         if (listTeams.size() >= 2 )
         {
-            Stage primStage = (Stage)match1AButton.getScene().getWindow();
+            Stage primStage = (Stage)matchSelecter.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/UpdateScore.fxml"));
             Parent root = loader.load();
   
             Stage stageGroupStage = new Stage();
             stageGroupStage.setScene(new Scene(root));
         
-            stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
+//            stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
+            stageGroupStage.setTitle("Match Selecter");
         
             stageGroupStage.initModality(Modality.WINDOW_MODAL);
             stageGroupStage.initOwner(primStage);
         
             stageGroupStage.show();
-            System.out.println("");
         }
         else
         {
@@ -230,10 +227,10 @@ public class MatchScheduleController implements Initializable {
     
 private void updateTeams()
     {
-        if (listTeams.size() == 2)
-        {
-            match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
-        }
+//        if (listTeams.size() == 2)
+//        {
+//            match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
+//        }
         if (listTeams.size() >= 12 && listTeams.size() <= 16)
         {
         //Group A
