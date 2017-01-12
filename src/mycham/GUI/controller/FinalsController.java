@@ -7,10 +7,13 @@ package mycham.GUI.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import mycham.BE.Team;
+import mycham.GUI.Model.TeamModel;
 
 /**
  * FXML Controller class
@@ -49,7 +52,14 @@ public class FinalsController implements Initializable {
     private Label semiFinal1Label;
     @FXML
     private Label final2Label;
+    
+    ObservableList<Team> listTeams;
 
+    public FinalsController()
+    {
+        listTeams = TeamModel.getInstance().getTeam();
+    }
+    
     /**
      * Initializes the controller class.
      */
@@ -152,8 +162,25 @@ public class FinalsController implements Initializable {
     }
 
     private void Finalists()
-    {
-        quaterFinal1Label.setText("Team 1");
+    {     
+        if(listTeams.get(0).getPoints() > listTeams.get(4).getPoints() && listTeams.get(0).getPoints() > listTeams.get(8).getPoints() && listTeams.get(0).getPoints() > listTeams.get(12).getPoints())
+        {
+            quaterFinal1Label.setText(listTeams.get(0).getName());
+        }
+        else if(listTeams.get(4).getPoints() > listTeams.get(8).getPoints() && listTeams.get(4).getPoints() > listTeams.get(12).getPoints())
+        {
+            quaterFinal1Label.setText(listTeams.get(4).getName());
+        }
+        else if(listTeams.get(8).getPoints() > listTeams.get(12).getPoints())
+        {
+            quaterFinal1Label.setText(listTeams.get(8).getName());
+        }
+        else
+        {
+            quaterFinal1Label.setText(listTeams.get(12).getName());
+        }
+        
+        //quaterFinal1Label.setText("Team 1");
         quaterFinal2Label.setText("Team four star");
         quaterFinal3Label.setText("Gruppen (husk det)");
         quaterFinal4Label.setText("6 treants");

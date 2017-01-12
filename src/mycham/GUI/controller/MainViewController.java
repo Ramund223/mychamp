@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package mycham.GUI.controller;
+package mycham.GUI.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -178,6 +178,7 @@ public class MainViewController implements Initializable {
         Collections.shuffle(teamModel.getTeam());
     }
     
+    @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         tableTeam.setItems(teamModel.getTeam());
@@ -218,19 +219,19 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
-            teamModel.getTeam().add(new Team(1, 2, 3, "Alpha"));
-//            teamModel.getTeam().add(new Team(1, 2, 2, "kasdka"));
-//            teamModel.getTeam().add(new Team("Bravo"));
-//            teamModel.getTeam().add(new Team("Charlie"));
-//            teamModel.getTeam().add(new Team("Delta"));
-//            teamModel.getTeam().add(new Team("Echo"));
-//            teamModel.getTeam().add(new Team("Foxtrot"));
-//            teamModel.getTeam().add(new Team("Golf"));
-//            teamModel.getTeam().add(new Team("Hotel"));
-//            teamModel.getTeam().add(new Team("India"));
-//            teamModel.getTeam().add(new Team("Juliett"));
-//            teamModel.getTeam().add(new Team("Kilo"));
-//            teamModel.getTeam().add(new Team("Magic Mike"));
+            teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
+            teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
+            teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
+            teamModel.getTeam().add(new Team(4, 0, 4, "Charlie"));
+            teamModel.getTeam().add(new Team(5, 0, 5, "Delta"));
+            teamModel.getTeam().add(new Team(6, 0, 6, "Echo"));
+            teamModel.getTeam().add(new Team(7, 0, 7, "Foxtrot"));
+            teamModel.getTeam().add(new Team(8, 0, 8, "Golf"));
+            teamModel.getTeam().add(new Team(9, 0, 9, "Hotel"));
+            teamModel.getTeam().add(new Team(10, 0, 10, "India"));
+            teamModel.getTeam().add(new Team(11, 0, 11, "Juliett"));
+            teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
+            teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
 //            teamModel.getTeam().add(new Team(0id, 0goals, 0point, name))
         }       
     }
