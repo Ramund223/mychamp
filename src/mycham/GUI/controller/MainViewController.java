@@ -227,7 +227,7 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team(6, 0, 6, "Echo"));
             teamModel.getTeam().add(new Team(7, 0, 7, "Foxtrot"));
             teamModel.getTeam().add(new Team(8, 0, 8, "Golf"));
-            teamModel.getTeam().add(new Team(9, 0, 9, "Hotel"));
+            teamModel.getTeam().add(new Team(9, 0, 1, "Hotel"));
             teamModel.getTeam().add(new Team(10, 0, 10, "India"));
             teamModel.getTeam().add(new Team(11, 0, 11, "Juliett"));
             teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
