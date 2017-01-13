@@ -81,6 +81,5 @@
             <Label fx:id="winnerLabel" text="Winner" />
          </graphic>
       </Button>
-      <Button layoutX="490.0" layoutY="356.0" mnemonicParsing="false" onAction="#readyButton" text="Ready Finals" />
    </children>
 </AnchorPane>

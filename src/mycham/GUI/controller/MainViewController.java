@@ -115,7 +115,8 @@ public class MainViewController implements Initializable {
     {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
-            teamModel.createTeam(textFieldAddTeam.getText());
+//            teamModel.createTeam(textFieldAddTeam.getText());
+            teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
             textFieldAddTeam.clear();
             teamNr++;
             teamNumber.setText("Amount of teams: " + teamNr);
@@ -229,6 +230,7 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
+<<<<<<< HEAD
             teamModel.getTeam().add(new Team("Alpha"));
             teamModel.getTeam().add(new Team("Bravo"));
             teamModel.getTeam().add(new Team("Charlie"));
@@ -243,6 +245,22 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team("Magic Mike"));
             teamNr += 12;
             teamNumber.setText("Amount of teams: " + teamNr);
+=======
+            teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
+            teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
+            teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
+            teamModel.getTeam().add(new Team(4, 0, 4, "Charlie"));
+            teamModel.getTeam().add(new Team(5, 0, 5, "Delta"));
+            teamModel.getTeam().add(new Team(6, 0, 6, "Echo"));
+            teamModel.getTeam().add(new Team(7, 0, 7, "Foxtrot"));
+            teamModel.getTeam().add(new Team(8, 0, 8, "Golf"));
+            teamModel.getTeam().add(new Team(9, 0, 1, "Hotel"));
+            teamModel.getTeam().add(new Team(10, 0, 10, "India"));
+            teamModel.getTeam().add(new Team(11, 0, 11, "Juliett"));
+            teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
+            teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
+//            teamModel.getTeam().add(new Team(0id, 0goals, 0point, name))
+>>>>>>> refs/heads/Finals
         }       
     }
 }

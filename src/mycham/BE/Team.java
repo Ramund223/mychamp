@@ -15,9 +15,15 @@ import javafx.beans.property.StringProperty;
 public class Team 
 {
     private final StringProperty name = new SimpleStringProperty();
+    private int id;
+    private int goals;
+    private int points;
 
-    public Team(String name) {
+    public Team(int id, int goals, int points, String name) {
         this.name.set(name);
+        this.id = id;
+        this.goals = goals;
+        this.points = points;
     }
     
     public String getName() {
@@ -36,4 +42,31 @@ public class Team
     public String toString() {
         return name.get();
     }
+<<<<<<< HEAD
+=======
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getGoals() {
+        return goals;
+    }
+
+    public void setGoals(int goals) {
+        this.goals = goals;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+>>>>>>> refs/heads/Finals
 }

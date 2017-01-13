@@ -6,11 +6,15 @@
 package mycham.GUI.controller;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import mycham.BE.Team;
+import mycham.GUI.Model.TeamModel;
 
 /**
  * FXML Controller class
@@ -49,13 +53,58 @@ public class FinalsController implements Initializable {
     private Label semiFinal1Label;
     @FXML
     private Label final2Label;
+    
+    ObservableList<Team> listTeams;
+    ArrayList<Team> group1 = new ArrayList<Team>() {};
+    ArrayList<Team> group2 = new ArrayList<Team>() {};
+    ArrayList<Team> group3 = new ArrayList<Team>() {};
+    ArrayList<Team> group4 = new ArrayList<Team>() {};
 
+    public FinalsController()
+    {
+        listTeams = TeamModel.getInstance().getTeam();
+        
+        
+        group1.add(listTeams.get(0));
+        group1.add(listTeams.get(4));
+        group1.add(listTeams.get(8));
+        if(listTeams.size() >= 13)
+        {
+            group1.add(listTeams.get(12));
+        }
+        
+        group2.add(listTeams.get(1));
+        group2.add(listTeams.get(5));
+        group2.add(listTeams.get(9));
+        if(listTeams.size() >= 14)
+        {
+            group2.add(listTeams.get(13));
+        }
+        
+        group3.add(listTeams.get(2));
+        group3.add(listTeams.get(6));
+        group3.add(listTeams.get(10));
+        if(listTeams.size() >= 15)
+        {
+            group3.add(listTeams.get(14));
+        }
+        
+        group4.add(listTeams.get(3));
+        group4.add(listTeams.get(7));
+        group4.add(listTeams.get(11));
+        if(listTeams.size() >= 16)
+        {
+            group4.add(listTeams.get(15));
+        }
+    }
+    
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        Finalists();
     }    
     
 
@@ -152,21 +201,100 @@ public class FinalsController implements Initializable {
     }
 
     private void Finalists()
-    {
-        quaterFinal1Label.setText("Team 1");
-        quaterFinal2Label.setText("Team four star");
-        quaterFinal3Label.setText("Gruppen (husk det)");
-        quaterFinal4Label.setText("6 treants");
-        quaterFinal5Label.setText("4 flotte fyre");
-        quaterFinal6Label.setText("mads har dumme ideer");
-        quaterFinal7Label.setText("Team 7");
-        quaterFinal8Label.setText("Nicolai er awesome");
+    {   
+        Team winner1 = group1.get(0);
+        Team winner2 = group2.get(0);
+        Team winner3 = group3.get(0);
+        Team winner4 = group4.get(0);
+        
+        for (Team a : group1) 
+        {
+            if(winner1.getPoints()<a.getPoints())
+                winner1 = a;
+        }
+        System.out.println(winner1 + " is the winner");
+        
+        for (Team b : group2) 
+        {
+            if(winner2.getPoints()<b.getPoints())
+                winner2 = b;
+        }
+        System.out.println(winner2 + " is the winner");
+
+        for (Team c : group3) 
+        {
+            if(winner3.getPoints()<c.getPoints())
+                winner3 = c;
+        }
+        System.out.println(winner3 + " is the winner");
+
+        for (Team d : group4) 
+        {
+            if(winner4.getPoints()<d.getPoints())
+                winner4 = d;
+        }
+        System.out.println(winner4 + " is the winner");    
+        
+        quaterFinal1Label.setText("" + winner1);
+        quaterFinal4Label.setText("" + winner2);
+        quaterFinal5Label.setText("" + winner3);
+        quaterFinal8Label.setText("" + winner4);
+        
+        group1.remove(winner1);
+        group2.remove(winner2);
+        group3.remove(winner3);
+        group4.remove(winner4);
+        
+        Team second1 = group1.get(0);
+        Team second2 = group2.get(0);
+        Team second3 = group3.get(0);
+        Team second4 = group4.get(0);
+        
+        for (Team a : group1) 
+        {
+            if(second1.getPoints()<a.getPoints())
+                second1 = a;
+        }
+        System.out.println(second1 + " is the second");
+        
+        for (Team b : group2) 
+        {
+            if(second2.getPoints()<b.getPoints())
+                second2 = b;
+        }
+        System.out.println(second2 + " is the second");
+
+        for (Team c : group3) 
+        {
+            if(second3.getPoints()<c.getPoints())
+                second3 = c;
+        }
+        System.out.println(second3 + " is the second");
+
+        for (Team d : group4) 
+        {
+            if(second4.getPoints()<d.getPoints())
+                second4 = d;
+        }
+        System.out.println(second4 + " is the second");  
+        
+        quaterFinal3Label.setText("" + second1);
+        quaterFinal2Label.setText("" + second2);
+        quaterFinal7Label.setText("" + second3);
+        quaterFinal6Label.setText("" + second4);
     }
-    
-    @FXML
-    private void readyButton(ActionEvent event) 
-    {
-        Finalists();
-    }
-    
+        
+//        System.out.println("Unsorted: " + listTeams);
+//        listTeams.sort(new Comparator()
+//        {
+//            @Override
+//            public int compare(Object o1, Object o2) 
+//            {
+//                Team a = (Team)o1;
+//                Team b= (Team)o2;
+//                return b.getPoints()-a.getPoints();
+//            }
+//        });
+//        
+//        System.out.println("Sorted: " + listTeams);
 }
