@@ -42,8 +42,6 @@ public class Team
     public String toString() {
         return name.get();
     }
-<<<<<<< HEAD
-=======
 
     public int getId() {
         return id;
@@ -68,5 +66,4 @@ public class Team
     public void setPoints(int points) {
         this.points = points;
     }
->>>>>>> refs/heads/Finals
 }

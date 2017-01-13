@@ -230,22 +230,8 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
-<<<<<<< HEAD
-            teamModel.getTeam().add(new Team("Alpha"));
-            teamModel.getTeam().add(new Team("Bravo"));
-            teamModel.getTeam().add(new Team("Charlie"));
-            teamModel.getTeam().add(new Team("Delta"));
-            teamModel.getTeam().add(new Team("Echo"));
-            teamModel.getTeam().add(new Team("Foxtrot"));
-            teamModel.getTeam().add(new Team("Golf"));
-            teamModel.getTeam().add(new Team("Hotel"));
-            teamModel.getTeam().add(new Team("India"));
-            teamModel.getTeam().add(new Team("Juliett"));
-            teamModel.getTeam().add(new Team("Kilo"));
-            teamModel.getTeam().add(new Team("Magic Mike"));
             teamNr += 12;
             teamNumber.setText("Amount of teams: " + teamNr);
-=======
             teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
             teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
             teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
@@ -260,7 +246,6 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
             teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
 //            teamModel.getTeam().add(new Team(0id, 0goals, 0point, name))
->>>>>>> refs/heads/Finals
         }       
     }
 }
