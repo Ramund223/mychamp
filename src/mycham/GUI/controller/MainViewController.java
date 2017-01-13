@@ -120,7 +120,6 @@ public class MainViewController implements Initializable {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
 //            teamModel.createTeam(textFieldAddTeam.getText());
-            teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
 //            teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
             teamModel.createTeam(textFieldAddTeam.getText(), teamModel.getTeam().size() + 1, 0, 0);
             textFieldAddTeam.clear();
@@ -171,7 +170,6 @@ public class MainViewController implements Initializable {
         }
         else if(selectedItem != -1 && eventStarted == true)
         {
-            textFieldAddTeam.clear();
             teamModel.getTeam().get(selectedItem).setName("");
             tableTeam.getColumns().get(0).setVisible(false);
             tableTeam.getColumns().get(0).setVisible(true);
@@ -197,10 +195,6 @@ public class MainViewController implements Initializable {
     @FXML
     private void testButton2(ActionEvent event) 
     {
-        for(int i = 0; i < teamModel.getTeam().size(); i++) 
-        {   
-            System.out.println(teamModel.getTeam().get(i));
-        }
 //        for(int i = 0; i < teamModel.getTeam().size(); i++) 
 //        {   
 //            System.out.println(teamModel.getTeam().get(i));
@@ -279,10 +273,13 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
+<<<<<<< HEAD
             teamNr += 12;
             teamNumber.setText("Amount of teams: " + teamNr);
+=======
 //            Structure:
 //            teamModel.getTeam().add(new Team(id, goals, point, name))
+>>>>>>> refs/remotes/origin/Team-Info-Branch
             teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
             teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
             teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
@@ -296,7 +293,6 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team(11, 0, 11, "Juliett"));
             teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
             teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
-//            teamModel.getTeam().add(new Team(0id, 0goals, 0point, name))
         }       
     }
 }
