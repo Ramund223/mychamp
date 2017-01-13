@@ -285,18 +285,4 @@ public class FinalsController implements Initializable {
     {
         Finalists();
     } 
-        
-//        System.out.println("Unsorted: " + listTeams);
-//        listTeams.sort(new Comparator()
-//        {
-//            @Override
-//            public int compare(Object o1, Object o2) 
-//            {
-//                Team a = (Team)o1;
-//                Team b= (Team)o2;
-//                return b.getPoints()-a.getPoints();
-//            }
-//        });
-//        
-//        System.out.println("Sorted: " + listTeams);
 }

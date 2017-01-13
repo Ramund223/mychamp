@@ -13,6 +13,7 @@ import mycham.BE.Team;
  *
  * @author Emil
  */
+
 public class TeamModel 
 {
     private static TeamModel INSTANCE;

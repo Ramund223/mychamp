@@ -32,8 +32,6 @@ public class MatchScheduleController implements Initializable {
     @FXML
     private Button matchScheduleClose;
     @FXML
-    private Button matchSelecter;
-    @FXML
     private Label publicMessageLabel;
     @FXML
     private Label match1A;
@@ -131,8 +129,6 @@ public class MatchScheduleController implements Initializable {
     private Label match11D;
     @FXML
     private Label match12D;
-    private MainViewController mainClass;
-    ObservableList<Team> listTeams;
     @FXML
     private Label group1HomeLabel;
     @FXML
@@ -166,11 +162,13 @@ public class MatchScheduleController implements Initializable {
     @FXML
     private Label group4Label;
     
+    private MainViewController mainClass;
+    ObservableList<Team> listTeams;
+    
     private int Group1Counter = 0;
     private int Group2Counter = 0;
     private int Group3Counter = 0;
     private int Group4Counter = 0;
-    
    
     public MatchScheduleController() 
     {
@@ -288,36 +286,6 @@ public class MatchScheduleController implements Initializable {
         }
         
         if (listTeams.size() < 12 || listTeams.size() > 16 || listTeams.isEmpty())
-        {
-            publicMessageLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
-        }
-    }
-    
-    //This method uses the updateTeams method by pressing the "Update Teams" button.
-    @FXML
-    private void updateTeams(ActionEvent event) 
-    {
-        updateTeams();
-    }
-    
-    //This method opens our match selector window
-    @FXML
-    private void matchSelecter(ActionEvent event)throws IOException
-    {
-        if (listTeams.size() >= 2 )
-        {
-            Stage primStage = (Stage)matchSelecter.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/UpdateScore.fxml"));
-            Parent root = loader.load();
-            Stage stageGroupStage = new Stage();
-            stageGroupStage.setScene(new Scene(root));
-//            stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
-            stageGroupStage.setTitle("Match Selecter");
-            stageGroupStage.initModality(Modality.WINDOW_MODAL);
-            stageGroupStage.initOwner(primStage);
-            stageGroupStage.show();
-        }
-        else
         {
             publicMessageLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
         }

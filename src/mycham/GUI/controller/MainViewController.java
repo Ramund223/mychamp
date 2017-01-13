@@ -79,8 +79,6 @@ public class MainViewController implements Initializable {
     {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
         {
-//            teamModel.createTeam(textFieldAddTeam.getText());
-//            teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
             teamModel.createTeam(textFieldAddTeam.getText(), teamModel.getTeam().size() + 1, 0, 0);
             textFieldAddTeam.clear();
             teamNr++;
@@ -136,63 +134,7 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().get(selectedItem).setName("");
             tableTeam.getColumns().get(0).setVisible(false);
             tableTeam.getColumns().get(0).setVisible(true);
-        }
- 
-//        for (int i = 0; i < teamModel.getTeam().size(); i++) 
-//        {
-//	    if (listTeams.get(i).getId() != i) 
-//            {
-//                listTeams.get(i).setId(100);
-////                i = i - 1;
-////                System.out.println("LOL");
-//            }
-//            else
-//            System.out.println("didt du nuffin");
-//            
-//            System.out.println(listTeams.get(i).getPoints());
-//	}   
-    }
-    
-    //DELETE THIS -v
-    @FXML
-    private void testButton2(ActionEvent event) 
-    {
-//        for(int i = 0; i < teamModel.getTeam().size(); i++) 
-//        {   
-//            System.out.println(teamModel.getTeam().get(i));
-//        }
-        
-//        if (!listTeams.isEmpty())
-//        {
-//            System.out.println(listTeams.get(0).getId());
-//            System.out.println(listTeams.get(1).getId());
-//            System.out.println(listTeams.get(2).getId());
-//            System.out.println(listTeams.get(3).getId());
-//            System.out.println(listTeams.get(4).getId());
-//            System.out.println(listTeams.get(5).getId());
-//            System.out.println(listTeams.get(6).getId());
-//            System.out.println(listTeams.get(7).getId());
-//            System.out.println(listTeams.get(8).getId());
-//            System.out.println(listTeams.get(9).getId());
-//            System.out.println(listTeams.get(10).getId());
-//            System.out.println(listTeams.get(11).getId());
-//            
-//        }
-//            System.out.println(listTeams.get(0).getId());
-//            listTeams.get(0).setId(100);
-//            System.out.println(listTeams.get(0).getId());
-//            listTeams.get(0).getId();
-//            listTeams.get(0).getId();
-        
-        listTeams.get(0).setName("Mango");
-        tableTeam.getColumns().get(0).setVisible(false);
-            tableTeam.getColumns().get(0).setVisible(true);
-            
-//            System.out.println(listTeams.get(0).getPoints() + 1);
-            listTeams.get(0).setPoints(100);
-//            System.out.println(listTeams.get(0).getPoints());
-//            listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
-            System.out.println(listTeams.get(0).getPoints());
+        } 
     }
     
     //This method shuffles the teams.
@@ -244,17 +186,17 @@ public class MainViewController implements Initializable {
 //            teamModel.getTeam().add(new Team(id, goals, point, name))
 
             teamModel.getTeam().add(new Team(1, 0, 0, "Alpha"));
-            teamModel.getTeam().add(new Team(3, 0, 0, "Bravo"));
-            teamModel.getTeam().add(new Team(4, 0, 0, "Charlie"));
-            teamModel.getTeam().add(new Team(5, 0, 0, "Delta"));
-            teamModel.getTeam().add(new Team(6, 0, 0, "Echo"));
-            teamModel.getTeam().add(new Team(7, 0, 0, "Foxtrot"));
-            teamModel.getTeam().add(new Team(8, 0, 0, "Golf"));
-            teamModel.getTeam().add(new Team(9, 0, 0, "Hotel"));
-            teamModel.getTeam().add(new Team(10, 0, 0, "India"));
-            teamModel.getTeam().add(new Team(11, 0, 0, "Juliett"));
-            teamModel.getTeam().add(new Team(12, 0, 0, "Kilo"));
-            teamModel.getTeam().add(new Team(13, 0, 0, "Magic Mike"));
+            teamModel.getTeam().add(new Team(2, 0, 0, "Bravo"));
+            teamModel.getTeam().add(new Team(3, 0, 0, "Charlie"));
+            teamModel.getTeam().add(new Team(4, 0, 0, "Delta"));
+            teamModel.getTeam().add(new Team(5, 0, 0, "Echo"));
+            teamModel.getTeam().add(new Team(6, 0, 0, "Foxtrot"));
+            teamModel.getTeam().add(new Team(7, 0, 0, "Golf"));
+            teamModel.getTeam().add(new Team(8, 0, 0, "Hotel"));
+            teamModel.getTeam().add(new Team(9, 0, 0, "India"));
+            teamModel.getTeam().add(new Team(10, 0, 0, "Juliett"));
+            teamModel.getTeam().add(new Team(11, 0, 0, "Kilo"));
+            teamModel.getTeam().add(new Team(12, 0, 0, "Magic Mike"));
         }       
     }
     

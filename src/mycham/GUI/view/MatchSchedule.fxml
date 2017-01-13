@@ -10,8 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="855.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.MatchScheduleController">
    <children>
-      <Button fx:id="matchScheduleClose" layoutX="816.0" layoutY="555.0" mnemonicParsing="false" onAction="#matchScheduleClose" text="Close" AnchorPane.bottomAnchor="14.0" />
-      <Button layoutX="193.0" layoutY="555.0" mnemonicParsing="false" onAction="#updateTeams" text="Update Team Schedule" AnchorPane.bottomAnchor="14.0" />
+      <Button fx:id="matchScheduleClose" layoutX="1322.0" layoutY="810.0" mnemonicParsing="false" onAction="#matchScheduleClose" text="Close" AnchorPane.bottomAnchor="14.0" />
       <GridPane layoutX="50.0" layoutY="94.0" prefHeight="701.0" prefWidth="1300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -102,11 +101,6 @@
          </children>
       </GridPane>
       <Label fx:id="publicMessageLabel" layoutX="50.0" layoutY="815.0" text="              " />
-      <Button fx:id="matchSelecter" layoutX="1152.0" layoutY="810.0" mnemonicParsing="false" onAction="#matchSelecter">
-         <graphic>
-            <Label text="Match Selecter" />
-         </graphic>
-      </Button>
       <ButtonBar layoutX="50.0" layoutY="52.0" prefHeight="40.0" prefWidth="265.0">
         <buttons>
           <Button mnemonicParsing="false" onAction="#group1Home" text="Home" />
