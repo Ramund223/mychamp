@@ -102,12 +102,8 @@ public class FinalsController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-<<<<<<< HEAD
     public void initialize(URL url, ResourceBundle rb) 
     {
-=======
-    public void initialize(URL url, ResourceBundle rb) {
->>>>>>> refs/remotes/origin/Team-Info-Branch
         Finalists();
     }    
     

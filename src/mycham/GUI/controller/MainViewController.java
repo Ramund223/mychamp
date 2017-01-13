@@ -273,13 +273,12 @@ public class MainViewController implements Initializable {
     {
         if(eventStarted == false)
         {
-<<<<<<< HEAD
             teamNr += 12;
             teamNumber.setText("Amount of teams: " + teamNr);
-=======
+
 //            Structure:
 //            teamModel.getTeam().add(new Team(id, goals, point, name))
->>>>>>> refs/remotes/origin/Team-Info-Branch
+
             teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
             teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
             teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
