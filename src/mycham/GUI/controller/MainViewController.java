@@ -89,7 +89,7 @@ public class MainViewController implements Initializable {
         stageFinals.initModality(Modality.WINDOW_MODAL);
         stageFinals.initOwner(primStage);
         stageFinals.show();
-    } 
+    }
     
     @FXML
     private void addTeam(ActionEvent event) 
@@ -200,6 +200,16 @@ public class MainViewController implements Initializable {
 //            System.out.println(listTeams.get(0).getId());
 //            listTeams.get(0).getId();
 //            listTeams.get(0).getId();
+        
+        listTeams.get(0).setName("Mango");
+        tableTeam.getColumns().get(0).setVisible(false);
+            tableTeam.getColumns().get(0).setVisible(true);
+            
+            System.out.println(listTeams.get(0).getPoints() + 1);
+            listTeams.get(0).setPoints(100);
+            System.out.println(listTeams.get(0).getPoints());
+            listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+            System.out.println(listTeams.get(0).getPoints());
     }
     
     @FXML
