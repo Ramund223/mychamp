@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="170.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.TeamController">
+   <children>
+      <GridPane layoutX="25.0" layoutY="25.0" prefHeight="120.0" prefWidth="186.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelName" text="Name" />
+            <Label fx:id="labelId" text="Id" GridPane.rowIndex="1" />
+            <Label fx:id="labelGoals" text="Goals" GridPane.rowIndex="2" />
+            <Label fx:id="labelPoints" text="Points" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="teamClose" layoutX="220.0" layoutY="160.0" mnemonicParsing="false" onAction="#teamClose" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="25.0" />
+   </children>
+</AnchorPane>

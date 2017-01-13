@@ -24,6 +24,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mycham.BE.Team;
@@ -285,6 +287,40 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
             teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
         }       
+    }
+    
+    @FXML
+    private void mousePressedOnTableView(MouseEvent event) throws IOException
+    {
+        // Check double-click left mouse button
+        if(event.isPrimaryButtonDown() && event.getClickCount()==2)
+        {
+            Team selectedTeam = tableTeam.getSelectionModel().getSelectedItem();
+            teamInfo(selectedTeam);
+        }
+    }
+    
+    private void teamInfo(Team team) throws IOException
+    {
+        //Gets primary stage and gets loader and loads FXML file to Parrent
+        Stage primStage = (Stage)tableTeam.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(
+        getClass().getResource("/mycham/GUI/view/Team.fxml"));
+        Parent root = loader.load();
+        
+        //Gets controller from patient view
+        TeamController teamController = loader.getController();
+        
+        teamController.setTeam(team);
+        
+        //Sets new stage as a model window
+        Stage teamView = new Stage();
+        teamView.setScene(new Scene(root));
+        teamView.setTitle("Team: " + tableTeam.getSelectionModel().getSelectedItem());
+        teamView.initModality(Modality.WINDOW_MODAL);
+        teamView.initOwner(primStage);
+        
+        teamView.show();
     }
     
     @Override
