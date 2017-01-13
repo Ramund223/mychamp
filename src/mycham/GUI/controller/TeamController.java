@@ -32,13 +32,15 @@ public class TeamController
     private Button teamClose;
     private Team team; 
     
+    //This method fills the labels
     public void setTeam(Team team)
     {
         this.team = team;
-        fillLabels();
+        labelInfo();
     }
     
-    private void fillLabels()
+    //This method show the teams infomation
+    private void labelInfo()
     {
         labelName.setText("Team Name: " + team.getName());
         labelId.setText("ID: " + team.getId() + "");

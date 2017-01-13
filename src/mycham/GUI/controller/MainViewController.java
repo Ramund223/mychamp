@@ -263,7 +263,6 @@ public class MainViewController implements Initializable {
     @FXML
     private void mousePressedOnTableView(MouseEvent event) throws IOException
     {
-        // Check double-click left mouse button
         if(event.isPrimaryButtonDown() && event.getClickCount()==2)
         {
             Team selectedTeam = tableTeam.getSelectionModel().getSelectedItem();
@@ -271,7 +270,7 @@ public class MainViewController implements Initializable {
         }
     }
     
-    //
+    //This method is bound to team info window.
     private void teamInfo(Team team) throws IOException
     {
         Stage primStage = (Stage)tableTeam.getScene().getWindow();
@@ -292,7 +291,6 @@ public class MainViewController implements Initializable {
     @FXML
     private void groupStage(ActionEvent event) throws IOException
     {
-        
         Stage primStage = (Stage)groupStageButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/MatchSchedule.fxml"));
         Parent root = loader.load();

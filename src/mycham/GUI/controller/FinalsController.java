@@ -60,11 +60,11 @@ public class FinalsController implements Initializable {
     ArrayList<Team> group3 = new ArrayList<Team>() {};
     ArrayList<Team> group4 = new ArrayList<Team>() {};
 
+    //This method splits the teams up in groups.
     public FinalsController()
     {
         listTeams = TeamModel.getInstance().getTeam();
-        
-        
+       
         group1.add(listTeams.get(0));
         group1.add(listTeams.get(4));
         group1.add(listTeams.get(8));
@@ -97,7 +97,8 @@ public class FinalsController implements Initializable {
             group4.add(listTeams.get(15));
         }
     }  
-
+    
+    //These methods sends the winner to the next round by clicke on the buttons.
     @FXML
     private void quarterFinal1Button(ActionEvent event) 
     {
@@ -190,6 +191,8 @@ public class FinalsController implements Initializable {
         
     }
 
+    //This method compares the points and picks the winner, then they are removed
+    //from the group and the secound winner is found from the remaing teams.
     private void Finalists()
     {   
         Team winner1 = group1.get(0);
