@@ -37,32 +37,23 @@ import mycham.GUI.Model.TeamModel;
 public class MainViewController implements Initializable {
     
     public boolean eventStarted = false;
-    
     private int teamNr = 0;
-    
     private TeamModel teamModel;
-    
     private Team team;
-    
     @FXML
     private TextField textFieldAddTeam;
-    
     @FXML
     private TableColumn<Team ,String> listTeamView;
-    
     @FXML
     private Button finalsButton;
-    
     @FXML
     private Label publicMessageLabel;
-    
     @FXML
     private Button groupStageButton;
     @FXML
     private TableView<Team> tableTeam;
     @FXML
     private Label teamNumber;
-    
     ObservableList<Team> listTeams;
     
     public MainViewController()
@@ -78,15 +69,11 @@ public class MainViewController implements Initializable {
         Stage primStage = (Stage)groupStageButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/MatchSchedule.fxml"));
         Parent root = loader.load();
-  
         Stage stageMainView = new Stage();
         stageMainView.setScene(new Scene(root));
-        
         stageMainView.setTitle("Group Stage");
-        
         stageMainView.initModality(Modality.WINDOW_MODAL);
         stageMainView.initOwner(primStage);
-        
         stageMainView.show();
     }
     
@@ -96,18 +83,13 @@ public class MainViewController implements Initializable {
         Stage primStage = (Stage)finalsButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/Finals.fxml"));
         Parent root = loader.load();
-  
         Stage stageFinals = new Stage();
         stageFinals.setScene(new Scene(root));
-        
         stageFinals.setTitle("Finals");
-        
         stageFinals.initModality(Modality.WINDOW_MODAL);
         stageFinals.initOwner(primStage);
-        
         stageFinals.show();
-    }
-    
+    } 
     
     @FXML
     private void addTeam(ActionEvent event) 
@@ -136,8 +118,6 @@ public class MainViewController implements Initializable {
             addTeamMethod();
         }
     }
-    
-    
     
     @FXML
     private void editTeam(ActionEvent event) 
@@ -190,7 +170,6 @@ public class MainViewController implements Initializable {
 //	}   
     }
     
-    
     //DELETE THIS -v
     @FXML
     private void testButton2(ActionEvent event) 
@@ -227,15 +206,7 @@ public class MainViewController implements Initializable {
     private void shuffleButton(ActionEvent event) 
     {
         Collections.shuffle(teamModel.getTeam());
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
-        tableTeam.setItems(teamModel.getTeam());
-        listTeamView.setCellValueFactory(value -> new SimpleObjectProperty<>(value.getValue().getName()));
-        teamNumber.setText("Amount of teams: " + teamNr);
-    }    
+    } 
     
     @FXML
     private void startTour(ActionEvent event) 
@@ -267,7 +238,6 @@ public class MainViewController implements Initializable {
     If you are a teacher, don't look at it!
     Unless you prefer to add 12 teams automatically
     */
-
     @FXML
     private void addDummy(ActionEvent event) 
     {
@@ -294,4 +264,12 @@ public class MainViewController implements Initializable {
             teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
         }       
     }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        tableTeam.setItems(teamModel.getTeam());
+        listTeamView.setCellValueFactory(value -> new SimpleObjectProperty<>(value.getValue().getName()));
+        teamNumber.setText("Amount of teams: " + teamNr);
+    }   
 }

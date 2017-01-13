@@ -19,51 +19,62 @@ public class Team
     private int goals;
     private int points;
 
-    public Team(int id, int goals, int points, String name) {
+    public Team(int id, int goals, int points, String name) 
+    {
         this.name.set(name);
         this.id = id;
         this.goals = goals;
         this.points = points;
     }
     
-    public String getName() {
+    public String getName() 
+    {
         return name.get();
     }
     
-    public void setName(String value) {
+    public void setName(String value) 
+    {
         name.set(value);
     }
 
-    public StringProperty nameProperty() {
+    public StringProperty nameProperty() 
+    {
         return name;
     }
     
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return name.get();
     }
 
-    public int getId() {
+    public int getId() 
+    {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(int id) 
+    {
         this.id = id;
     }
 
-    public int getGoals() {
+    public int getGoals() 
+    {
         return goals;
     }
 
-    public void setGoals(int goals) {
+    public void setGoals(int goals) 
+    {
         this.goals = goals;
     }
 
-    public int getPoints() {
+    public int getPoints() 
+    {
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(int points) 
+    {
         this.points = points;
     }
 }

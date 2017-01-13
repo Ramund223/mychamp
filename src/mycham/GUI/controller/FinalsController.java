@@ -96,17 +96,7 @@ public class FinalsController implements Initializable {
         {
             group4.add(listTeams.get(15));
         }
-    }
-    
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) 
-    {
-        Finalists();
-    }    
-    
+    }  
 
     @FXML
     private void quarterFinal1Button(ActionEvent event) 
@@ -283,6 +273,15 @@ public class FinalsController implements Initializable {
         quaterFinal7Label.setText("" + second3);
         quaterFinal6Label.setText("" + second4);
     }
+    
+    /**
+     * Initializes the controller class.
+     */ 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) 
+    {
+        Finalists();
+    } 
         
 //        System.out.println("Unsorted: " + listTeams);
 //        listTeams.sort(new Comparator()

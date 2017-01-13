@@ -24,25 +24,15 @@ import mycham.GUI.Model.TeamModel;
  * @author Nicolai
  */
 public class UpdateScoreController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
     
     @FXML
     private Button updateScoreClose;
-    
-    
     @FXML
     private TextField homePointsTextfield;
-    
-    
     @FXML
     private Label homeTeam;
-    
     @FXML
     private Label guestTeam;
-    
     ObservableList<Team> listTeams;
     
     public UpdateScoreController() 
@@ -65,6 +55,9 @@ public class UpdateScoreController implements Initializable {
         stage.close();
     }
     
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {

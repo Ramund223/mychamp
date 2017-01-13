@@ -20,11 +20,8 @@ public class MyCham extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("GUI/view/MainView.fxml"));
-        
         Scene scene = new Scene(root);
-        
         stage.setTitle("Football Championship");
-        
         stage.setScene(scene);
         stage.show();
     }

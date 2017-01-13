@@ -31,172 +31,112 @@ public class MatchScheduleController implements Initializable {
     
     @FXML
     private Button matchScheduleClose;
-    
     @FXML
     private Button matchSelecter;
-    
     @FXML
     private Label publicMessageLabel;
-    
     @FXML
     private Label match1A;
-    
     @FXML
     private Label match2A;
-    
     @FXML
     private Label match3A;
-    
     @FXML
     private Label match4A;
-    
     @FXML
     private Label match5A;
-    
     @FXML
     private Label match6A;
-    
     @FXML
     private Label match7A;
-    
     @FXML
     private Label match8A;
-    
     @FXML
     private Label match9A;
-    
     @FXML
     private Label match10A;
-    
     @FXML
     private Label match11A;
-    
     @FXML
     private Label match12A;
-    
     @FXML
     private Label match1B;
-    
     @FXML
     private Label match2B;
-    
     @FXML
     private Label match3B;
-    
     @FXML
     private Label match4B;
-    
     @FXML
     private Label match5B;
-    
     @FXML
     private Label match6B;
-    
     @FXML
     private Label match7B;
-    
     @FXML
     private Label match8B;
-    
     @FXML
     private Label match9B;
-    
     @FXML
     private Label match10B;
-    
     @FXML
     private Label match11B;
-    
     @FXML
     private Label match12B;
-    
     @FXML
     private Label match1C;
-    
     @FXML
     private Label match2C;
-    
     @FXML
     private Label match3C;
-    
     @FXML
     private Label match4C;
-    
     @FXML
     private Label match5C;
-    
     @FXML
     private Label match6C;
-    
     @FXML
     private Label match7C;
-    
     @FXML
     private Label match8C;
-    
     @FXML
     private Label match9C;
-    
     @FXML
     private Label match10C;
-    
     @FXML
     private Label match11C;
-    
     @FXML
     private Label match12C;
-    
     @FXML
     private Label match1D;
-    
     @FXML
     private Label match2D;
-    
     @FXML
     private Label match3D;
-    
     @FXML
     private Label match4D;
-    
     @FXML
     private Label match5D;
-    
     @FXML
     private Label match6D;
-    
     @FXML
     private Label match7D;
-    
     @FXML
     private Label match8D;
-    
     @FXML
     private Label match9D;
-    
     @FXML
     private Label match10D;
-    
     @FXML
     private Label match11D;
-    
     @FXML
     private Label match12D;
-    
     private MainViewController mainClass;
-
     ObservableList<Team> listTeams;
    
     public MatchScheduleController() 
     {
         listTeams = TeamModel.getInstance().getTeam();
-    }
-    
-    @FXML
-    private void matchScheduleClose(ActionEvent event) 
-    {
-        Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
-        stage.close();
-        
     }
     
     @FXML
@@ -207,16 +147,12 @@ public class MatchScheduleController implements Initializable {
             Stage primStage = (Stage)matchSelecter.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/UpdateScore.fxml"));
             Parent root = loader.load();
-  
             Stage stageGroupStage = new Stage();
             stageGroupStage.setScene(new Scene(root));
-        
 //            stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
             stageGroupStage.setTitle("Match Selecter");
-        
             stageGroupStage.initModality(Modality.WINDOW_MODAL);
             stageGroupStage.initOwner(primStage);
-        
             stageGroupStage.show();
         }
         else
@@ -349,6 +285,14 @@ private void updateTeams()
     private void updateTeams(ActionEvent event) 
     {
         updateTeams();
+    }
+    
+    @FXML
+    private void matchScheduleClose(ActionEvent event) 
+    {
+        Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
+        stage.close();
+        
     }
     
     /**

@@ -19,15 +19,6 @@ public class TeamModel
     
     private final ObservableList<Team> teamList;
 
-    public static synchronized TeamModel getInstance()
-    {
-        if(INSTANCE == null)
-        {
-            INSTANCE = new TeamModel();
-        }
-        return INSTANCE;
-    }
-    
     private TeamModel() 
     {
         teamList = FXCollections.observableArrayList();
@@ -35,9 +26,17 @@ public class TeamModel
     
     public void createTeam(String teamName, int teamId, int teamGoals, int teamPoints)
     {
-//        Team team = new Team(teamName);
         Team team = new Team(teamId, teamGoals, teamPoints, teamName);
         teamList.add(team);
+    }
+    
+    public static synchronized TeamModel getInstance()
+    {
+        if(INSTANCE == null)
+        {
+            INSTANCE = new TeamModel();
+        }
+        return INSTANCE;
     }
     
     public ObservableList<Team> getTeam()
