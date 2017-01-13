@@ -243,18 +243,18 @@ public class MainViewController implements Initializable {
 //            Structure:
 //            teamModel.getTeam().add(new Team(id, goals, point, name))
 
-            teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
-            teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));
-            teamModel.getTeam().add(new Team(4, 0, 4, "Charlie"));
-            teamModel.getTeam().add(new Team(5, 0, 5, "Delta"));
-            teamModel.getTeam().add(new Team(6, 0, 6, "Echo"));
-            teamModel.getTeam().add(new Team(7, 0, 7, "Foxtrot"));
-            teamModel.getTeam().add(new Team(8, 0, 8, "Golf"));
-            teamModel.getTeam().add(new Team(9, 0, 1, "Hotel"));
-            teamModel.getTeam().add(new Team(10, 0, 10, "India"));
-            teamModel.getTeam().add(new Team(11, 0, 11, "Juliett"));
-            teamModel.getTeam().add(new Team(12, 0, 12, "Kilo"));
-            teamModel.getTeam().add(new Team(13, 0, 13, "Magic Mike"));
+            teamModel.getTeam().add(new Team(1, 0, 0, "Alpha"));
+            teamModel.getTeam().add(new Team(3, 0, 0, "Bravo"));
+            teamModel.getTeam().add(new Team(4, 0, 0, "Charlie"));
+            teamModel.getTeam().add(new Team(5, 0, 0, "Delta"));
+            teamModel.getTeam().add(new Team(6, 0, 0, "Echo"));
+            teamModel.getTeam().add(new Team(7, 0, 0, "Foxtrot"));
+            teamModel.getTeam().add(new Team(8, 0, 0, "Golf"));
+            teamModel.getTeam().add(new Team(9, 0, 0, "Hotel"));
+            teamModel.getTeam().add(new Team(10, 0, 0, "India"));
+            teamModel.getTeam().add(new Team(11, 0, 0, "Juliett"));
+            teamModel.getTeam().add(new Team(12, 0, 0, "Kilo"));
+            teamModel.getTeam().add(new Team(13, 0, 0, "Magic Mike"));
         }       
     }
     
