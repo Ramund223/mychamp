@@ -177,30 +177,6 @@ public class MatchScheduleController implements Initializable {
         listTeams = TeamModel.getInstance().getTeam();
     }
     
-    //This method updates the team labels
-=======
-    @FXML
-    private void matchSelecter(ActionEvent event)throws IOException
-    {
-        if (listTeams.size() >= 2 )
-        {
-            Stage primStage = (Stage)matchSelecter.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/UpdateScore.fxml"));
-            Parent root = loader.load();
-            Stage stageGroupStage = new Stage();
-            stageGroupStage.setScene(new Scene(root));
-//            stageGroupStage.setTitle("Team (" + listTeams.get(0) + ")" + " VS Team (" + listTeams.get(1) + ")");
-            stageGroupStage.setTitle("Match Selecter");
-            stageGroupStage.initModality(Modality.WINDOW_MODAL);
-            stageGroupStage.initOwner(primStage);
-            stageGroupStage.show();
-        }
-        else
-        {
-            publicMessageLabel.setText("Not enough teams or too few teams! Choose between 12 and 16 team!");
-        }
-    }
-    
     @FXML
     private void updateTeams()
     {
