@@ -1,0 +1,38 @@
+﻿Merge remote-tracking branch 'refs/remotes/origin/Team-Info-Branch'
+
+# Conflicts:
+#	src/mycham/GUI/controller/FinalsController.java
+#	src/mycham/GUI/controller/MainViewController.java
+#	src/mycham/GUI/view/MainView.fxml
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	new file:   nbproject/UPDATED.TXT
+#	modified:   nbproject/build-impl.xml
+#	modified:   nbproject/genfiles.properties
+#	modified:   nbproject/jfx-impl.xml
+#	new file:   nbproject/jfx-impl_backup_1.xml
+#	new file:   nbproject/jfx-impl_backup_2.xml
+#	new file:   nbproject/jfx-impl_backup_3.xml
+#	deleted:    src/mycham/GUI/Model/PointsModel.java
+#	modified:   src/mycham/GUI/controller/FinalsController.java
+#	modified:   src/mycham/GUI/controller/MainViewController.java
+#	modified:   src/mycham/GUI/controller/MatchScheduleController.java
+#	modified:   src/mycham/GUI/controller/UpdateScoreController.java
+#	modified:   src/mycham/GUI/view/MainView.fxml
+#	modified:   src/mycham/GUI/view/MatchSchedule.fxml
+#	deleted:    src/mycham/GUI/view/MatchSchedule.old.fxml
+#
+

@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -62,9 +63,12 @@ public class MainViewController implements Initializable {
     @FXML
     private Label teamNumber;
     
+    ObservableList<Team> listTeams;
+    
     public MainViewController()
     {
         teamModel = TeamModel.getInstance();
+        listTeams = TeamModel.getInstance().getTeam();
     }     
     
     @FXML
@@ -117,6 +121,8 @@ public class MainViewController implements Initializable {
         {
 //            teamModel.createTeam(textFieldAddTeam.getText());
             teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
+//            teamModel.createTeam(textFieldAddTeam.getText(), 0, 0, 0);
+            teamModel.createTeam(textFieldAddTeam.getText(), teamModel.getTeam().size() + 1, 0, 0);
             textFieldAddTeam.clear();
             teamNr++;
             teamNumber.setText("Amount of teams: " + teamNr);
@@ -166,7 +172,24 @@ public class MainViewController implements Initializable {
         else if(selectedItem != -1 && eventStarted == true)
         {
             textFieldAddTeam.clear();
+            teamModel.getTeam().get(selectedItem).setName("");
+            tableTeam.getColumns().get(0).setVisible(false);
+            tableTeam.getColumns().get(0).setVisible(true);
         }
+ 
+//        for (int i = 0; i < teamModel.getTeam().size(); i++) 
+//        {
+//	    if (listTeams.get(i).getId() != i) 
+//            {
+//                listTeams.get(i).setId(100);
+////                i = i - 1;
+////                System.out.println("LOL");
+//            }
+//            else
+//            System.out.println("didt du nuffin");
+//            
+//            System.out.println(listTeams.get(i).getPoints());
+//	}   
     }
     
     
@@ -178,6 +201,32 @@ public class MainViewController implements Initializable {
         {   
             System.out.println(teamModel.getTeam().get(i));
         }
+//        for(int i = 0; i < teamModel.getTeam().size(); i++) 
+//        {   
+//            System.out.println(teamModel.getTeam().get(i));
+//        }
+        
+//        if (!listTeams.isEmpty())
+//        {
+//            System.out.println(listTeams.get(0).getId());
+//            System.out.println(listTeams.get(1).getId());
+//            System.out.println(listTeams.get(2).getId());
+//            System.out.println(listTeams.get(3).getId());
+//            System.out.println(listTeams.get(4).getId());
+//            System.out.println(listTeams.get(5).getId());
+//            System.out.println(listTeams.get(6).getId());
+//            System.out.println(listTeams.get(7).getId());
+//            System.out.println(listTeams.get(8).getId());
+//            System.out.println(listTeams.get(9).getId());
+//            System.out.println(listTeams.get(10).getId());
+//            System.out.println(listTeams.get(11).getId());
+//            
+//        }
+//            System.out.println(listTeams.get(0).getId());
+//            listTeams.get(0).setId(100);
+//            System.out.println(listTeams.get(0).getId());
+//            listTeams.get(0).getId();
+//            listTeams.get(0).getId();
     }
     
     @FXML
@@ -232,6 +281,8 @@ public class MainViewController implements Initializable {
         {
             teamNr += 12;
             teamNumber.setText("Amount of teams: " + teamNr);
+//            Structure:
+//            teamModel.getTeam().add(new Team(id, goals, point, name))
             teamModel.getTeam().add(new Team(1, 0, 10, "Alpha"));
             teamModel.getTeam().add(new Team(2, 0, 2, "kasdka"));
             teamModel.getTeam().add(new Team(3, 0, 3, "Bravo"));

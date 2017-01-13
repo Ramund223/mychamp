@@ -32,14 +32,10 @@ public class UpdateScoreController implements Initializable {
     @FXML
     private Button updateScoreClose;
     
-    @FXML
-    private Button updateTeams;
     
     @FXML
     private TextField homePointsTextfield;
     
-    @FXML
-    private Label teamName;
     
     @FXML
     private Label homeTeam;
@@ -58,6 +54,8 @@ public class UpdateScoreController implements Initializable {
     {
         homeTeam.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")");
         guestTeam.setText("Udebane: "+ "(" + listTeams.get(1) + ")");
+        
+        listTeams.get(0).setGoals(0);
     }
     
     @FXML

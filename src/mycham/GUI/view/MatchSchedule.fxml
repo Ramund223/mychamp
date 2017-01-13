@@ -40,58 +40,58 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="match1A" text="Match 1" GridPane.rowIndex="2" />
-            <Label fx:id="match2A" text="Match 2" GridPane.rowIndex="3" />
-            <Label fx:id="match3A" text="Match 3" GridPane.rowIndex="5" />
-            <Label fx:id="match4A" text="Match 4" GridPane.rowIndex="6" />
-            <Label fx:id="match5A" text="Match 5" GridPane.rowIndex="8" />
-            <Label fx:id="match6A" text="Match 6" GridPane.rowIndex="9" />
-            <Label fx:id="match7A" text="Match 7" GridPane.rowIndex="11" />
-            <Label fx:id="match8A" text="Match 8" GridPane.rowIndex="12" />
-            <Label fx:id="match9A" text="Match 9" GridPane.rowIndex="14" />
-            <Label fx:id="match10A" text="Match 10" GridPane.rowIndex="15" />
-            <Label fx:id="match11A" text="Match 11" GridPane.rowIndex="17" />
-            <Label fx:id="match12A" text="Match 12" GridPane.rowIndex="18" />
+            <Label fx:id="match1A" text="     " GridPane.rowIndex="2" />
+            <Label fx:id="match2A" text="     " GridPane.rowIndex="3" />
+            <Label fx:id="match3A" text="     " GridPane.rowIndex="5" />
+            <Label fx:id="match4A" text="     " GridPane.rowIndex="6" />
+            <Label fx:id="match5A" text="     " GridPane.rowIndex="8" />
+            <Label fx:id="match6A" text="     " GridPane.rowIndex="9" />
+            <Label fx:id="match7A" text="     " GridPane.rowIndex="11" />
+            <Label fx:id="match8A" text="     " GridPane.rowIndex="12" />
+            <Label fx:id="match9A" text="     " GridPane.rowIndex="14" />
+            <Label fx:id="match10A" text="     " GridPane.rowIndex="15" />
+            <Label fx:id="match11A" text="     " GridPane.rowIndex="17" />
+            <Label fx:id="match12A" text="     " GridPane.rowIndex="18" />
             <Label text="Group A" />
             <Label text="Group B" GridPane.columnIndex="1" />
             <Label text="Group C" GridPane.columnIndex="2" />
             <Label text="Group D" GridPane.columnIndex="3" />
-            <Label fx:id="match1B" text="Match 1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="match2B" text="Match 2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="match3B" text="Match 3" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label fx:id="match4B" text="Match 4" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label fx:id="match5B" text="Match 5" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label fx:id="match6B" text="Match 6" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label fx:id="match7B" text="Match 7" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <Label fx:id="match8B" text="Match 8" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <Label fx:id="match9B" text="Match 9" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-            <Label fx:id="match10B" text="Match 10" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-            <Label fx:id="match11B" text="Match 11" GridPane.columnIndex="1" GridPane.rowIndex="17" />
-            <Label fx:id="match12B" text="Match 12" GridPane.columnIndex="1" GridPane.rowIndex="18" />
-            <Label fx:id="match1C" text="Match 1" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label fx:id="match2C" text="Match 2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="match3C" text="Match 3" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label fx:id="match4C" text="Match 4" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label fx:id="match5C" text="Match 5" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Label fx:id="match6C" text="Match 6" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <Label fx:id="match7C" text="Match 7" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-            <Label fx:id="match8C" text="Match 8" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-            <Label fx:id="match9C" text="Match 9" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-            <Label fx:id="match10C" text="Match 10" GridPane.columnIndex="2" GridPane.rowIndex="15" />
-            <Label fx:id="match11C" text="Match 11" GridPane.columnIndex="2" GridPane.rowIndex="17" />
-            <Label fx:id="match12C" text="Match 12" GridPane.columnIndex="2" GridPane.rowIndex="18" />
-            <Label fx:id="match1D" text="Match 1" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label fx:id="match2D" text="Match 2" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Label fx:id="match3D" text="Match 3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Label fx:id="match4D" text="Match 4" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Label fx:id="match5D" text="Match 5" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Label fx:id="match6D" text="Match 6" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Label fx:id="match7D" text="Match 7" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-            <Label fx:id="match8D" text="Match 8" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-            <Label fx:id="match9D" text="Match 9" GridPane.columnIndex="3" GridPane.rowIndex="14" />
-            <Label fx:id="match10D" text="Match 10" GridPane.columnIndex="3" GridPane.rowIndex="15" />
-            <Label fx:id="match11D" text="Match 11" GridPane.columnIndex="3" GridPane.rowIndex="17" />
-            <Label fx:id="match12D" text="Match 12" GridPane.columnIndex="3" GridPane.rowIndex="18" />
+            <Label fx:id="match1B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="match2B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="match3B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="match4B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="match5B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label fx:id="match6B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label fx:id="match7B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label fx:id="match8B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label fx:id="match9B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Label fx:id="match10B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <Label fx:id="match11B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <Label fx:id="match12B" text="     " GridPane.columnIndex="1" GridPane.rowIndex="18" />
+            <Label fx:id="match1C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="match2C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="match3C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label fx:id="match4C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label fx:id="match5C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label fx:id="match6C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <Label fx:id="match7C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label fx:id="match8C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Label fx:id="match9C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <Label fx:id="match10C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Label fx:id="match11C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="17" />
+            <Label fx:id="match12C" text="     " GridPane.columnIndex="2" GridPane.rowIndex="18" />
+            <Label fx:id="match1D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label fx:id="match2D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="match3D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label fx:id="match4D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label fx:id="match5D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Label fx:id="match6D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Label fx:id="match7D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <Label fx:id="match8D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="12" />
+            <Label fx:id="match9D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="14" />
+            <Label fx:id="match10D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="15" />
+            <Label fx:id="match11D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="17" />
+            <Label fx:id="match12D" text="     " GridPane.columnIndex="3" GridPane.rowIndex="18" />
             <Label text="Round 2" GridPane.rowIndex="4" />
             <Label text="Round 3" GridPane.rowIndex="7" />
             <Label text="Round 4" GridPane.rowIndex="10" />
@@ -101,9 +101,9 @@
          </children>
       </GridPane>
       <Label fx:id="publicMessageLabel" layoutX="610.0" layoutY="21.0" text="              " />
-      <Button fx:id="match1AButton" layoutX="258.0" layoutY="16.0" mnemonicParsing="false" onAction="#match1AButton">
+      <Button fx:id="matchSelecter" layoutX="258.0" layoutY="16.0" mnemonicParsing="false" onAction="#matchSelecter">
          <graphic>
-            <Label fx:id="match1ALabel" text="Match 1" />
+            <Label text="Match Selecter" />
          </graphic>
       </Button>
    </children>
