@@ -133,6 +133,44 @@ public class MatchScheduleController implements Initializable {
     private Label match12D;
     private MainViewController mainClass;
     ObservableList<Team> listTeams;
+    @FXML
+    private Label group1HomeLabel;
+    @FXML
+    private Label group1TieLabel;
+    @FXML
+    private Label group1OutLabel;
+    @FXML
+    private Label group2HomeLabel;
+    @FXML
+    private Label group2TieLabel;
+    @FXML
+    private Label group2OutLabel;
+    @FXML
+    private Label group3HomeLabel;
+    @FXML
+    private Label group3TieLabel;
+    @FXML
+    private Label group3OutLabel;
+    @FXML
+    private Label group4HomeLabel;
+    @FXML
+    private Label group4TieLabel;
+    @FXML
+    private Label group4OutLabel;
+    @FXML
+    private Label group2Label;
+    @FXML
+    private Label group3Label;
+    @FXML
+    private Label group1Label;
+    @FXML
+    private Label group4Label;
+    
+    private int Group1Counter = 0;
+    private int Group2Counter = 0;
+    private int Group3Counter = 0;
+    private int Group4Counter = 0;
+    
    
     public MatchScheduleController() 
     {
@@ -157,18 +195,13 @@ public class MatchScheduleController implements Initializable {
         }
         else
         {
-            publicMessageLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
+            publicMessageLabel.setText("Not enough teams or too few teams! Choose between 12 and 16 team!");
         }
     }
     
-private void updateTeams()
+    @FXML
+    private void updateTeams()
     {
-        listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
-        System.out.println(listTeams.get(0).getPoints());
-//        if (listTeams.size() == 2)
-//        {
-//            match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
-//        }
         if (listTeams.size() >= 12 && listTeams.size() <= 16)
         {
         //Group A
@@ -268,7 +301,7 @@ private void updateTeams()
             match5D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
             match6D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(15) + ")");
             match7D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(3) + ")");
-            match8D.setText("Hjem: "+ "(" + listTeams.get(15) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
+            match8D.setText("Hjem: "+ "(" + listTeams.get(15) + ")" + " VS " + "Ude: " + "(" + listTeams.get(7) + ")");
             match9D.setText("Hjem: "+ "(" + listTeams.get(3) + ")" + " VS " + "Ude: " + "(" + listTeams.get(15) + ")");
             match10D.setText("Hjem: "+ "(" + listTeams.get(7) + ")" + " VS " + "Ude: " + "(" + listTeams.get(11) + ")");
             match11D.setText("Hjem: "+ "(" + listTeams.get(11) + ")" + " VS " + "Ude: " + "(" + listTeams.get(7) + ")");
@@ -283,7 +316,6 @@ private void updateTeams()
         
     }
     
-    @FXML
     private void updateTeams(ActionEvent event) 
     {
         updateTeams();
@@ -294,7 +326,14 @@ private void updateTeams()
     {
         Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
         stage.close();
-        
+    }
+    
+    private void matchPoints() 
+    {
+        group1Label.setText("Match 1");
+        group2Label.setText("Match 1");
+        group3Label.setText("Match 1");
+        group4Label.setText("Match 1");
     }
     
     /**
@@ -304,5 +343,1506 @@ private void updateTeams()
     public void initialize(URL url, ResourceBundle rb) 
     {
         updateTeams();
+        matchPoints();
     }    
+
+    @FXML
+    private void group1Home(ActionEvent event) 
+    {
+        if (listTeams.size() <= 12 )
+        {
+            if(Group1Counter == 0)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 2");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 1)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 3");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 2)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 4");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 5");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 4)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 6");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 5)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("All Matches done");
+                Group1Counter = Group1Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 13)
+        {
+            if(Group1Counter == 0)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 2");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 1)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 3");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 2)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 4");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                group1Label.setText("Match 5");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 4)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 6");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 5)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 7");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 6)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 8");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 7)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                group1Label.setText("Match 9");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 8)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 10");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 9)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 11");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 10)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 12");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 11)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                group1Label.setText("All Matches done");
+                Group1Counter = Group1Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group1Tie(ActionEvent event) 
+    {
+        if (listTeams.size() <= 12 )
+        {
+            if(Group1Counter == 0)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                group1Label.setText("Match 2");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 1)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                group1Label.setText("Match 3");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 2)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                group1Label.setText("Match 4");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                group1Label.setText("Match 5");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 4)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                group1Label.setText("Match 6");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 5)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                group1Label.setText("All Matches done");
+                Group1Counter = Group1Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 13)
+        {
+            if(Group1Counter == 0)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                group1Label.setText("Match 2");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 1)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 1);
+                group1Label.setText("Match 3");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 2)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                group1Label.setText("Match 4");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 1);
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                group1Label.setText("Match 5");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 4)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                group1Label.setText("Match 6");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 5)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 1);
+                group1Label.setText("Match 7");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 6)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                group1Label.setText("Match 8");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 7)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                group1Label.setText("Match 9");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 8)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 1);
+                group1Label.setText("Match 10");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 9)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                group1Label.setText("Match 11");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 10)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 1);
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 1);
+                group1Label.setText("Match 12");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 11)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 1);
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+                group1Label.setText("All Matches done");
+                Group1Counter = Group1Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group1Out(ActionEvent event) 
+    {
+        if (listTeams.size() <= 12 )
+        {
+            if(Group1Counter == 0)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 2");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 1)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 3");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 2)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 4");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 5");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 4)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 6");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 5)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("All Matches done");
+                Group1Counter = Group1Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 13)
+        {
+            if(Group1Counter == 0)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 2");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 1)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                group1Label.setText("Match 3");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 2)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 4");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 5");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 4)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 6");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 5)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                group1Label.setText("Match 7");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 6)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("Match 8");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 7)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 9");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 8)
+            {
+                listTeams.get(12).setPoints(listTeams.get(12).getPoints() + 3);
+                group1Label.setText("Match 10");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 9)
+            {
+                listTeams.get(8).setPoints(listTeams.get(8).getPoints() + 3);
+                group1Label.setText("Match 11");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 10)
+            {
+                listTeams.get(4).setPoints(listTeams.get(4).getPoints() + 3);
+                group1Label.setText("Match 12");
+                Group1Counter = Group1Counter + 1;
+            }
+            else if(Group1Counter == 11)
+            {
+                listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 3);
+                group1Label.setText("All Matches done");
+                Group1Counter = Group1Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group2Home(ActionEvent event) 
+    {
+        if (listTeams.size() <= 13 )
+        {
+            if(Group2Counter == 0)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 2");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 1)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 3");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 2)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 4");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 3)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 5");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 4)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 6");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 5)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("All matches done");
+                Group2Counter = Group2Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 14)
+        {
+            if(Group2Counter == 0)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 2");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 1)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 3");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 2)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 4");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 3)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 3);
+                group2Label.setText("Match 5");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 4)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 6");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 5)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 7");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 6)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 8");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 7)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 3);
+                group2Label.setText("Match 9");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 8)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 10");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 9)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 11");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 10)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 12");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 11)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 3);
+                group2Label.setText("All matches done");
+                Group2Counter = Group2Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group2Tie(ActionEvent event) 
+    {
+        if (listTeams.size() <= 13 )
+        {
+            if(Group2Counter == 0)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                group2Label.setText("Match 2");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 1)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                group2Label.setText("Match 3");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 2)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                group2Label.setText("Match 4");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 3)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                group2Label.setText("Match 5");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 4)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                group2Label.setText("Match 6");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 5)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                group2Label.setText("All matches done");
+                Group2Counter = Group2Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 14)
+        {
+            if(Group2Counter == 0)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                group2Label.setText("Match 2");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 1)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 1);
+                group2Label.setText("Match 3");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 2)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                group2Label.setText("Match 4");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 3)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 1);
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                group2Label.setText("Match 5");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 4)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                group2Label.setText("Match 6");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 5)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 1);
+                group2Label.setText("Match 7");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 6)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                group2Label.setText("Match 8");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 7)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 1);
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                group2Label.setText("Match 9");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 8)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 1);
+                group2Label.setText("Match 10");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 9)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                group2Label.setText("Match 11");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 10)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 1);
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 1);
+                group2Label.setText("Match 12");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 11)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 1);
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 1);
+                group2Label.setText("All matches done");
+                Group2Counter = Group2Counter + 1;
+            }
+        }
+    }
+    
+    @FXML
+    private void group2Out(ActionEvent event) 
+    {
+        if (listTeams.size() <= 13 )
+        {
+            if(Group2Counter == 0)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 2");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 1)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 3");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 2)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 4");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group1Counter == 3)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 5");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 4)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 6");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 5)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("All matches done");
+                Group2Counter = Group2Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 14)
+        {
+            if(Group2Counter == 0)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 2");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 1)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 3);
+                group2Label.setText("Match 3");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 2)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 4");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 3)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 5");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 4)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 6");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 5)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 3);
+                group2Label.setText("Match 7");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 6)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("Match 8");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 7)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 9");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 8)
+            {
+                listTeams.get(13).setPoints(listTeams.get(13).getPoints() + 3);
+                group2Label.setText("Match 10");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 9)
+            {
+                listTeams.get(9).setPoints(listTeams.get(9).getPoints() + 3);
+                group2Label.setText("Match 11");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 10)
+            {
+                listTeams.get(5).setPoints(listTeams.get(5).getPoints() + 3);
+                group2Label.setText("Match 12");
+                Group2Counter = Group2Counter + 1;
+            }
+            else if(Group2Counter == 11)
+            {
+                listTeams.get(1).setPoints(listTeams.get(1).getPoints() + 3);
+                group2Label.setText("All matches done");
+                Group2Counter = Group2Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group3Home(ActionEvent event) 
+    {
+        if (listTeams.size() <= 14 )
+        {
+            if(Group3Counter == 0)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 2");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 1)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 3");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 2)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 4");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 3)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 5");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 4)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 6");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 5)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("All matches done");
+                Group3Counter = Group3Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 15)
+        {
+            if(Group3Counter == 0)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 2");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 1)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 3");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 2)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 4");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 3)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 3);
+                group3Label.setText("Match 5");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 4)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 6");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 5)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 7");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 6)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 8");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 7)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 3);
+                group3Label.setText("Match 9");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 8)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 10");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 9)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 11");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 10)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 12");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 11)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 3);
+                group3Label.setText("All matches done");
+                Group3Counter = Group3Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group3Tie(ActionEvent event) 
+    {
+        if (listTeams.size() <= 14 )
+        {
+            if(Group3Counter == 0)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                group3Label.setText("Match 2");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 1)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                group3Label.setText("Match 3");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 2)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                group3Label.setText("Match 4");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 3)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                group3Label.setText("Match 5");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 4)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                group3Label.setText("Match 6");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 5)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                group3Label.setText("All matches done");
+                Group3Counter = Group3Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 15)
+        {
+            if(Group3Counter == 0)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                group3Label.setText("Match 2");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 1)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 1);
+                group3Label.setText("Match 3");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 2)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                group3Label.setText("Match 4");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 3)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 1);
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                group3Label.setText("Match 5");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 4)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                group3Label.setText("Match 6");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 5)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 1);
+                group3Label.setText("Match 7");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 6)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                group3Label.setText("Match 8");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 7)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 1);
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                group3Label.setText("Match 9");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 8)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 1);
+                group3Label.setText("Match 10");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 9)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                group3Label.setText("Match 11");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 10)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 1);
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 1);
+                group3Label.setText("Match 12");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 11)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 1);
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 1);
+                group3Label.setText("All matches done");
+                Group3Counter = Group3Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group3Out(ActionEvent event) 
+    {
+        if (listTeams.size() <= 14 )
+        {
+            if(Group3Counter == 0)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 2");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 1)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 3");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 2)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 4");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 3)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 5");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 4)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 6");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 5)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("All matches done");
+                Group3Counter = Group3Counter + 1;
+            }
+        }
+        else if(listTeams.size() >= 15)
+        {
+            if(Group3Counter == 0)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 2");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 1)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 3);
+                group3Label.setText("Match 3");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 2)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 4");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 3)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 5");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 4)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 6");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 5)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 3);
+                group3Label.setText("Match 7");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 6)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("Match 8");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 7)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 9");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 8)
+            {
+                listTeams.get(14).setPoints(listTeams.get(14).getPoints() + 3);
+                group3Label.setText("Match 10");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 9)
+            {
+                listTeams.get(10).setPoints(listTeams.get(10).getPoints() + 3);
+                group3Label.setText("Match 11");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 10)
+            {
+                listTeams.get(6).setPoints(listTeams.get(6).getPoints() + 3);
+                group3Label.setText("Match 12");
+                Group3Counter = Group3Counter + 1;
+            }
+            else if(Group3Counter == 11)
+            {
+                listTeams.get(2).setPoints(listTeams.get(2).getPoints() + 3);
+                group3Label.setText("All matches done");
+                Group3Counter = Group3Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group4Home(ActionEvent event) 
+    {
+        if (listTeams.size() <= 15 )
+        {
+            if(Group4Counter == 0)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 2");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 1)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 3");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 2)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 4");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 3)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 5");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 4)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 6");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 5)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("All matches done");
+                Group4Counter = Group4Counter + 1;
+            }
+        }
+        else if(listTeams.size() == 16)
+        {
+            if(Group4Counter == 0)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 2");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 1)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 3");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 2)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 4");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 3)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 3);
+                group4Label.setText("Match 5");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 4)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 6");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 5)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 7");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 6)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 8");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 7)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 3);
+                group4Label.setText("Match 9");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 8)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 10");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 9)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 11");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 10)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 12");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 11)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 3);
+                group4Label.setText("All matches done");
+                Group4Counter = Group4Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group4Tie(ActionEvent event) 
+    {
+        if (listTeams.size() <= 15 )
+        {
+            if(Group4Counter == 0)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                group4Label.setText("Match 2");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 1)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                group4Label.setText("Match 3");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 2)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                group4Label.setText("Match 4");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 3)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                group4Label.setText("Match 5");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 4)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                group4Label.setText("Match 6");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 5)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                group4Label.setText("All matches done");
+                Group4Counter = Group4Counter + 1;
+            }
+        }
+        else if(listTeams.size() == 16)
+        {
+            if(Group4Counter == 0)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                group4Label.setText("Match 2");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 1)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 1);
+                group4Label.setText("Match 3");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 2)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                group4Label.setText("Match 4");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 3)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 1);
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                group4Label.setText("Match 5");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 4)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                group4Label.setText("Match 6");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 5)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 1);
+                group4Label.setText("Match 7");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 6)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                group4Label.setText("Match 8");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 7)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 1);
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                group4Label.setText("Match 9");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 8)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 1);
+                group4Label.setText("Match 10");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 9)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                group4Label.setText("Match 11");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 10)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 1);
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 1);
+                group4Label.setText("Match 12");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 11)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 1);
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 1);
+                group4Label.setText("All matches done");
+                Group4Counter = Group4Counter + 1;
+            }
+        }
+    }
+
+    @FXML
+    private void group4Out(ActionEvent event) 
+    {
+        if (listTeams.size() <= 15 )
+        {
+            if(Group4Counter == 0)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 2");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 1)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 3");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 2)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 4");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 3)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 5");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 4)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 6");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 5)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("All matches done");
+                Group4Counter = Group4Counter + 1;
+            }
+        }
+        else if(listTeams.size() == 16)
+        {
+            if(Group4Counter == 0)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 2");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 1)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 3);
+                group4Label.setText("Match 3");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 2)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 4");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 3)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 5");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 4)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 6");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 5)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 3);
+                group4Label.setText("Match 7");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 6)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("Match 8");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 7)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 9");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 8)
+            {
+                listTeams.get(15).setPoints(listTeams.get(15).getPoints() + 3);
+                group4Label.setText("Match 10");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 9)
+            {
+                listTeams.get(11).setPoints(listTeams.get(11).getPoints() + 3);
+                group4Label.setText("Match 11");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 10)
+            {
+                listTeams.get(7).setPoints(listTeams.get(7).getPoints() + 3);
+                group4Label.setText("Match 12");
+                Group4Counter = Group4Counter + 1;
+            }
+            else if(Group4Counter == 11)
+            {
+                listTeams.get(3).setPoints(listTeams.get(3).getPoints() + 3);
+                group4Label.setText("All matches done");
+                Group4Counter = Group4Counter + 1;
+            }
+        }
+    }
 }

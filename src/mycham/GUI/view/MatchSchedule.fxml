@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.MatchScheduleController">
+<AnchorPane id="AnchorPane" prefHeight="855.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mycham.GUI.controller.MatchScheduleController">
    <children>
       <Button fx:id="matchScheduleClose" layoutX="816.0" layoutY="555.0" mnemonicParsing="false" onAction="#matchScheduleClose" text="Close" AnchorPane.bottomAnchor="14.0" />
       <Button layoutX="193.0" layoutY="555.0" mnemonicParsing="false" onAction="#updateTeams" text="Update Team Schedule" AnchorPane.bottomAnchor="14.0" />
-      <GridPane layoutX="50.0" layoutY="50.0" prefHeight="701.0" prefWidth="1300.0">
+      <GridPane layoutX="50.0" layoutY="94.0" prefHeight="701.0" prefWidth="1300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -100,11 +101,43 @@
             <Label text="Round 1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Label fx:id="publicMessageLabel" layoutX="610.0" layoutY="21.0" text="              " />
-      <Button fx:id="matchSelecter" layoutX="258.0" layoutY="16.0" mnemonicParsing="false" onAction="#matchSelecter">
+      <Label fx:id="publicMessageLabel" layoutX="50.0" layoutY="815.0" text="              " />
+      <Button fx:id="matchSelecter" layoutX="1152.0" layoutY="810.0" mnemonicParsing="false" onAction="#matchSelecter">
          <graphic>
             <Label text="Match Selecter" />
          </graphic>
       </Button>
+      <ButtonBar layoutX="50.0" layoutY="52.0" prefHeight="40.0" prefWidth="265.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#group1Home" text="Home" />
+            <Button mnemonicParsing="false" onAction="#group1Tie" text="Tie" />
+            <Button mnemonicParsing="false" onAction="#group1Out" text="Guest" />
+        </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="367.0" layoutY="52.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#group2Home" text="Home" />
+            <Button mnemonicParsing="false" onAction="#group2Tie" text="Tie" />
+            <Button mnemonicParsing="false" onAction="#group2Out" text="Guest" />
+        </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="700.0" layoutY="52.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#group3Home" text="Home" />
+            <Button mnemonicParsing="false" onAction="#group3Tie" text="Tie" />
+            <Button mnemonicParsing="false" onAction="#group3Out" text="Guest" />
+        </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="1006.0" layoutY="52.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#group4Home" text="Home" />
+            <Button mnemonicParsing="false" onAction="#group4Tie" text="Tie" />
+            <Button mnemonicParsing="false" onAction="#group4Out" text="Guest" />
+        </buttons>
+      </ButtonBar>
+      <Label fx:id="group2Label" layoutX="367.0" layoutY="31.0" text="Match 2" />
+      <Label fx:id="group3Label" layoutX="700.0" layoutY="31.0" text="Match 3" />
+      <Label fx:id="group1Label" layoutX="50.0" layoutY="31.0" text="Match 1" />
+      <Label fx:id="group4Label" layoutX="1006.0" layoutY="31.0" text="Match 4" />
    </children>
 </AnchorPane>
