@@ -258,6 +258,8 @@ public class MainViewController implements Initializable {
         }       
     }
     
+    //This method adds the ability to double click on the tableview inorder to see
+    //team infomation on the selected team
     @FXML
     private void mousePressedOnTableView(MouseEvent event) throws IOException
     {
@@ -269,26 +271,20 @@ public class MainViewController implements Initializable {
         }
     }
     
+    //
     private void teamInfo(Team team) throws IOException
     {
-        //Gets primary stage and gets loader and loads FXML file to Parrent
         Stage primStage = (Stage)tableTeam.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(
         getClass().getResource("/mycham/GUI/view/Team.fxml"));
         Parent root = loader.load();
-        
-        //Gets controller from patient view
         TeamController teamController = loader.getController();
-        
         teamController.setTeam(team);
-        
-        //Sets new stage as a model window
         Stage teamView = new Stage();
         teamView.setScene(new Scene(root));
         teamView.setTitle("Team: " + tableTeam.getSelectionModel().getSelectedItem());
         teamView.initModality(Modality.WINDOW_MODAL);
         teamView.initOwner(primStage);
-        
         teamView.show();
     }
     
