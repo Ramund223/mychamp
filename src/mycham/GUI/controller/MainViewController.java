@@ -62,6 +62,7 @@ public class MainViewController implements Initializable {
         listTeams = TeamModel.getInstance().getTeam();
     }     
     
+    //This method is bound to the group stage button and opens the group stage window.
     @FXML
     private void groupStage(ActionEvent event) throws IOException
     {
@@ -77,6 +78,7 @@ public class MainViewController implements Initializable {
         stageMainView.show();
     }
     
+    //This method is bound to the final stage button and opens the final stage window.
     @FXML
     private void finals(ActionEvent event) throws IOException
     {
@@ -91,12 +93,17 @@ public class MainViewController implements Initializable {
         stageFinals.show();
     }
     
+    //This method is bound to the add team button.
     @FXML
     private void addTeam(ActionEvent event) 
     {
         addTeamMethod();
     }
     
+    //This method is the add team method which adds the text from the text field 
+    // to the listTeams observerable list. It also adds to the team number counter
+    // and increse the group ID number, and checks if the event have started
+    // if the event have started its not possible to add new teams.
     public void addTeamMethod ()
     {
         if (!textFieldAddTeam.getText().isEmpty() && eventStarted == false)
@@ -110,6 +117,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    //This method use the addTeamMethod when you press the "Enter" key.
     @FXML
     public void handleEnterPressed(KeyEvent event)
     {
@@ -119,6 +127,7 @@ public class MainViewController implements Initializable {
         }
     }
     
+    //This method adds the ability to edit the selected teams name.
     @FXML
     private void editTeam(ActionEvent event) 
     {
@@ -138,6 +147,9 @@ public class MainViewController implements Initializable {
         }
     }
     
+    //This method deletes the selected team and decrease the team counter and
+    // if the tournement have started it wont remove the selected team but rather
+    // replace it with an empty space inoder not to mess the group match schedule up
     @FXML
     private void deleteTeam(ActionEvent event)
     {
@@ -212,12 +224,16 @@ public class MainViewController implements Initializable {
             System.out.println(listTeams.get(0).getPoints());
     }
     
+    //This method shuffles the teams.
     @FXML
     private void shuffleButton(ActionEvent event) 
     {
         Collections.shuffle(teamModel.getTeam());
     } 
     
+    //This method starts the tournament, which removes the ability to add teams
+    // and makes the delete teams button replace the team with a empty space
+    // inorder not to make team match schedule mess up. 
     @FXML
     private void startTour(ActionEvent event) 
     {
@@ -231,7 +247,9 @@ public class MainViewController implements Initializable {
             publicMessageLabel.setText("Roster is not correct size!");
         }
     }
-
+    
+    //This method resets the tournament by setting the event startet as false
+    // and removes all the teams and resets the team counter.
     @FXML
     private void resetTour(ActionEvent event) 
     {
@@ -242,12 +260,7 @@ public class MainViewController implements Initializable {
         teamNumber.setText("Amount of teams: " + teamNr);
     }
     
-    /*
-    NOTE TO EVERYONE!
-    Hardcode below, to be removed!
-    If you are a teacher, don't look at it!
-    Unless you prefer to add 12 teams automatically
-    */
+    //This method quickly adds 12 dummy teams to make the testing purpose faster.
     @FXML
     private void addDummy(ActionEvent event) 
     {

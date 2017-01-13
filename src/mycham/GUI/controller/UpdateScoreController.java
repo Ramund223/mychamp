@@ -39,15 +39,17 @@ public class UpdateScoreController implements Initializable {
     {
         listTeams = TeamModel.getInstance().getTeam();
     }
+    
+    //This method updates the team labels
     @FXML
     private void updateTeams()
     {
         homeTeam.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")");
         guestTeam.setText("Udebane: "+ "(" + listTeams.get(1) + ")");
-        
         listTeams.get(0).setGoals(0);
     }
     
+    //This method closes the match selecter window by pressing the "Close" button.
     @FXML
     private void updateScoreClose(ActionEvent event) 
     {

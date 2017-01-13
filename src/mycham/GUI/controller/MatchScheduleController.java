@@ -139,6 +139,7 @@ public class MatchScheduleController implements Initializable {
         listTeams = TeamModel.getInstance().getTeam();
     }
     
+    //This method opens our match selector window
     @FXML
     private void matchSelecter(ActionEvent event)throws IOException
     {
@@ -161,7 +162,8 @@ public class MatchScheduleController implements Initializable {
         }
     }
     
-private void updateTeams()
+    //This method updates the team labels
+    private void updateTeams()
     {
         listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
         System.out.println(listTeams.get(0).getPoints());
@@ -280,21 +282,21 @@ private void updateTeams()
         {
             publicMessageLabel.setText("Not enought teams or too few teams! Choose between 12 and 16 team!");
         }
-        
     }
     
+    //This method uses the updateTeams method by pressing the "Update Teams" button.
     @FXML
     private void updateTeams(ActionEvent event) 
     {
         updateTeams();
     }
     
+    //This method closes the match schedule window by pressing the "Close" button.
     @FXML
     private void matchScheduleClose(ActionEvent event) 
     {
         Stage stage = (Stage) matchScheduleClose.getScene().getWindow();
         stage.close();
-        
     }
     
     /**

@@ -24,6 +24,7 @@ public class TeamModel
         teamList = FXCollections.observableArrayList();
     }
     
+    //This method create the teams and add the team to the team observablelist.
     public void createTeam(String teamName, int teamId, int teamGoals, int teamPoints)
     {
         Team team = new Team(teamId, teamGoals, teamPoints, teamName);
