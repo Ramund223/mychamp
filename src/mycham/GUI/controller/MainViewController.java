@@ -64,37 +64,6 @@ public class MainViewController implements Initializable {
         listTeams = TeamModel.getInstance().getTeam();
     }     
     
-    //This method is bound to the group stage button and opens the group stage window.
-    @FXML
-    private void groupStage(ActionEvent event) throws IOException
-    {
-        
-        Stage primStage = (Stage)groupStageButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/MatchSchedule.fxml"));
-        Parent root = loader.load();
-        Stage stageMainView = new Stage();
-        stageMainView.setScene(new Scene(root));
-        stageMainView.setTitle("Group Stage");
-        stageMainView.initModality(Modality.WINDOW_MODAL);
-        stageMainView.initOwner(primStage);
-        stageMainView.show();
-    }
-    
-    //This method is bound to the final stage button and opens the final stage window.
-    @FXML
-    private void finals(ActionEvent event) throws IOException
-    {
-        Stage primStage = (Stage)finalsButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/Finals.fxml"));
-        Parent root = loader.load();
-        Stage stageFinals = new Stage();
-        stageFinals.setScene(new Scene(root));
-        stageFinals.setTitle("Finals");
-        stageFinals.initModality(Modality.WINDOW_MODAL);
-        stageFinals.initOwner(primStage);
-        stageFinals.show();
-    }
-    
     //This method is bound to the add team button.
     @FXML
     private void addTeam(ActionEvent event) 
@@ -321,6 +290,37 @@ public class MainViewController implements Initializable {
         teamView.initOwner(primStage);
         
         teamView.show();
+    }
+    
+    //This method is bound to the group stage button and opens the group stage window.
+    @FXML
+    private void groupStage(ActionEvent event) throws IOException
+    {
+        
+        Stage primStage = (Stage)groupStageButton.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/MatchSchedule.fxml"));
+        Parent root = loader.load();
+        Stage stageMainView = new Stage();
+        stageMainView.setScene(new Scene(root));
+        stageMainView.setTitle("Group Stage");
+        stageMainView.initModality(Modality.WINDOW_MODAL);
+        stageMainView.initOwner(primStage);
+        stageMainView.show();
+    }
+    
+    //This method is bound to the final stage button and opens the final stage window.
+    @FXML
+    private void finals(ActionEvent event) throws IOException
+    {
+        Stage primStage = (Stage)finalsButton.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mycham/GUI/view/Finals.fxml"));
+        Parent root = loader.load();
+        Stage stageFinals = new Stage();
+        stageFinals.setScene(new Scene(root));
+        stageFinals.setTitle("Finals");
+        stageFinals.initModality(Modality.WINDOW_MODAL);
+        stageFinals.initOwner(primStage);
+        stageFinals.show();
     }
     
     @Override

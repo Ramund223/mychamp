@@ -30,7 +30,6 @@ public class TeamController
     private Label labelPoints;
     @FXML
     private Button teamClose;
-
     private Team team; 
     
     public void setTeam(Team team)
