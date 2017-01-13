@@ -163,6 +163,8 @@ public class MatchScheduleController implements Initializable {
     
 private void updateTeams()
     {
+        listTeams.get(0).setPoints(listTeams.get(0).getPoints() + 1);
+        System.out.println(listTeams.get(0).getPoints());
 //        if (listTeams.size() == 2)
 //        {
 //            match1ALabel.setText("Hjemmebane: "+ "(" + listTeams.get(0) + ")" + " VS " + "Udebane: " + "(" + listTeams.get(1) + ")");
